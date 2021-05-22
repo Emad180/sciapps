@@ -99,7 +99,11 @@ ul li a {
     display: block;
   }
   #forCanvas {
-    width: 100%;
+    width: 90%;
     margin-left: 10%;
   }
+   .abstract {
+      width: 90%; 
+      margin-left: 10%;
+    }
 }
