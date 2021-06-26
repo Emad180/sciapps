@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href='css/CIE1931.css'>
+    <script src='jslib/p5.js' type='text/javascript'></script>
+    <title>CIE-1931 chromaticity diagram | an online tool</title>
+</head>
+<body>
+    <header> 
+      <nav class='navbar'>
+          <input type='checkbox' id='check'>
+          <label for='check' class='toggle-button'>   
+              <span class='bar'></span>
+              <span class='bar'></span>
+              <span class='bar'></span>
+          </label>
+
+          <label class="brand-title">Sci-Sim</label>
+
+          <img class='search' src="images/search-icon.png" alt="srearch icon"> 
+
+          <ul class='menu'>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="CIE1931.html">CIE 1931 app</a></li>
+              <li><a href="CIE1976.html">CIELUV 1976 app</a></li>
+          </ul>
+      </nav>
+    </header>
+
+    <div id = 'forCanvas'>
+        <script src='js/CIE1976.js' type='text/javascript'></script>
+    </div>
+
+    <div class='abstract'>
+        <h4> CIELUV 1976 chromaticity diagram web-based app </h4>
+        <p><i>Author:</i> E H H Hasabeldaim</p>
+        <p><i>Author affiliation:</i> Department of Physics, University of the Free State, Bloemfontein, 9300, South Africa</p>
+        <p><i>Published:</i> 2021</p>
+        <p><i>Abstract:</i></p>
+        <p>CIELUV 1976 uniform chromaticity diagram app is been develpoed and rigorously
+            tested. The software is an online and user-friendly application that works in
+            most modren browsers for all systems (windows, mac, and linux). The user will be 
+            able to upload a text file containing numerical data of a photoluminescence, 
+            electroluminescence, cathodoluminescence, or light emitting diode (LED) emission
+            spectrum, and simply calculate the CIELUV parameters (u' and v'), plot the results
+            in the color space gamut and save the final results as an png file format (image).
+            This online software application is useful for scientists, professionals, and engineers
+            in the fields of luminescence, LEDs, displays, color science, and graphics.
+        </p>
+
+        <p><i>Features:</i></p>
+        <p>This app allow the user to </p>
+        <ol>
+            <li>upload photoluminescence, cathodoluminescence, electroluminescence or light emitting diode (LED) emission spectrum data in text format (comma/ tab delimited ).</li>
+            <li>Calculate the u' v' coordinates.</li>
+            <li>Add multiple CIELUV points on the CIELUV diagram.</li>
+            <li>Configure the diagram layout including the axis width, color, font, font size.</li>
+            <li>Save the final diagram as png file format.  </li>
+          </ol>
+
+        <p><i>References:</i></p>
+        <ol>
+            <li>Schanda, Janos. "CIE colorimetry." Colorimetry: Understanding the CIE system (2007): 25-78.</li>
+            <li>Parkyz, Du-Sik, Jong-Seung Parky, and Joon Hee Hany. "Image indexing using color histogram in the CIELUV Color Space." (1999).</li>
+        </ol>
+    </div>
+
+    <div class='bottom-bar'>
+        
+      <div class='contact-us'>
+          Contact us</br>
+          <a href = "mailto: omda180@gmail.com"><img src="images/gmail-logo.png" alt="gmail"></a>
+          <a href = "https://www.facebook.com/profile.php?id=100001888282568" target='blank'><img src="images/facebook-logo.png" alt="facebook"></a>
+          <a href = "https://www.researchgate.net/profile/Emad_Hasabeldaim" target='blank'><img src="images/research-gate-logo.png" alt="researchgate"></a>
+          <a href = "https://www.linkedin.com/in/emad-hasabeldaim-92b605125/" target='blank'><img src="images/linkedin-logo.png" alt="linkedin"></a>
+      </div>
+    </div>
+
+</body>
+</html>
