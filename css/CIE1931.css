@@ -76,6 +76,15 @@ ul li a {
 
 .abstract p i {
   font-weight: bold;
+  line-height: 1.6;
+}
+
+.abstract ol li {
+  line-height: 1.6;
+}
+
+.abstract p {
+  line-height: 1.6;
 }
 
 .bottom-bar{
