@@ -1,3 +1,3 @@
 User-agent: *
 Disallow: 
-Sitemap: http://sci-sim.com/sitemap.xml
+Sitemap: http://sciapps.sci-sim.com/sitemap.xml
