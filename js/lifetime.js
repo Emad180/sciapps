@@ -26,7 +26,7 @@ window.onload = function () {
                             linesArray.push(rowTrimed.replace(/[,]|\s+/, '    '));
                         }else{
                             if(showAlert){
-                                alert(`The delemiter must be ',' or 'Tab'`);
+                                alert(`Upload correct file format .txt/.csv, the delemiter must be ','/'Tab'`);
                                 showAlert = false;
                             }
                         }
