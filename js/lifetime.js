@@ -22,7 +22,7 @@ window.onload = function () {
                         //pass;
                     }else{
                         let rowTrimed = element.replace(/^\s+|\s+$/gm,'');
-                        if(/[,]||\s+/.test(rowTrimed)){
+                        if(/[,]|\s+/.test(rowTrimed)){
                             linesArray.push(rowTrimed.replace(/[,]|\s+/, '    '));
                         }else{
                             if(showAlert){
