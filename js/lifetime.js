@@ -12,7 +12,7 @@ window.onload = function () {
         const file1 = file[0];
         let reader = new FileReader();
         reader.onload = (e) => {
-            let extension = ['text/plain', 'text/csv', 'text/xls', 'text/xlsx', 'text/uxd']
+            let extension = ['text/plain', 'text/csv', 'text/xls', 'text/xlsx', 'text/uxd'];
             if(file1.type.includes(extension)){
                 const file2 = e.target.result;
                 const lines = file2.split(/\r\n|\n/);
