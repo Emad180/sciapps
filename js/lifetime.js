@@ -12,7 +12,7 @@ window.onload = function () {
         const file1 = file[0];
         let reader = new FileReader();
         reader.onload = (e) => {
-            if(file1.type == 'text/plain' || file1.type == 'text/csv'){
+            if(file1.type = 'text/plain' || file1.type = 'text/csv'){
                 const file2 = e.target.result;
                 const lines = file2.split(/\r\n|\n/);
                 lines.forEach(element => {
