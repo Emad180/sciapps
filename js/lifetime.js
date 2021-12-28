@@ -53,7 +53,8 @@ window.onload = function () {
                     xyArray.push(xArray[i]*yArray[i]);
                 }
                 document.getElementById('lifetime_result').innerHTML = (xyArray.reduce(sum)/yArray.reduce(sum)).toFixed(4);
-            }reader.onerror = (error) => {
+            }
+            reader.onerror = (error) => {
                 alert("Failed to read file!\n\n" + reader.error);
             };
         reader.readAsText(file1);
