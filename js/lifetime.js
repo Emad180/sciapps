@@ -12,9 +12,7 @@ window.onload = function () {
         const file1 = file[0];
         let reader = new FileReader();
         reader.onload = (e) => {
-            let valiString = ['text/plain', 'text/csv', 'text/xls', 'text/xlsx', 'text/uxd'];
-            let validation = file1.type;
-            if(valiString.includes(validation)){
+            if(toString(file1.type) === 'text/plain' || 'text/csv' || 'text/xls' || 'text/xlsx' || 'text/uxd'){
                 const file2 = e.target.result;
                 const lines = file2.split(/\r\n|\n/);
                 lines.forEach(element => {
