@@ -60,7 +60,7 @@ window.onload = function () {
         }else{
               alert('Upload .txt or .csv file format');
         }
-    }
+    });
 }
 
 function dataProcessing(Array1, Array2){
