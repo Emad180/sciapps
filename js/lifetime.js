@@ -18,7 +18,7 @@ window.onload = function () {
                 const file2 = e.target.result;
                 const lines = file2.split(/\r\n|\n/);
                 lines.forEach(element => {
-                    if(/[^0-9,.\s\tEe+]/g.test(element)){
+                    if(/[^0-9,.\s\tEe+-]/g.test(element)){
                         //pass
                     }else if(element == ''){
                         //pass;
@@ -42,7 +42,7 @@ window.onload = function () {
                 textArea.forEach(line => {
                     let value = line.split('    ');
                     let xAxis = Number(value[0]);
-                    let yAxis = Number(value[1].replace(/[^0-9.\s\tEe+]/, ''));
+                    let yAxis = Number(value[1].replace(/[^0-9.\s\tEe+-]/, ''));
                     xArray.push(xAxis);
                     yArray.push(yAxis);
                 });
