@@ -18,7 +18,7 @@ window.onload = function () {
                 const file2 = e.target.result;
                 const lines = file2.split(/\r\n|\n/);
                 lines.forEach(element => {
-                    if(/[^0-9,.\s\tEe+]/g.test(element)){
+                    if(/[^0-9,.Ee+]/g.test(element)){
                         //pass
                     }else if(element == ''){
                         //pass;
