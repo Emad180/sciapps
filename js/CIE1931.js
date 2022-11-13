@@ -1,1 +1,495 @@
-const _0x4a2c=['input_file','Border:','value','Font','option','Times\x20New\x20Roman','94797qTwrDk','120px','Georgia','110px','CIEimage','Width','removeCIEpoint','Calculate','Walter\x20Turncoat','Color','height','style','position','width','saveImage','splice','91134FivwPE','axisFont','CIE\x20chromaticiy\x20diagram\x201931','174541BUnAzT','forEach','Remove\x20CIE\x20coordinate','122446iHVgBt','18px','load\x20txt\x20file\x20format\x20please','CIEpoint','191eAYkdr','Font\x20size','axisTitleColor','axisScaleColor','test','1gFgpMB','borderWidth','parent','split','red','Legends:','green','scaleTitleFontSize','axisColor','magenta','5741PXyeKZ','legendFontSize','userFileLoaded','name','CIE1931chromaticitydiagram.png','File\x20id:','length','calculexy','input','40px','slice','12px','black','151020fSjRnm','legendFont','15VyujkB','addbutton','save_image','forCanvas','removeciepoint','mousePressed','Axis\x20title:','addCIEpoint','yellow','legendColor','files/ciexyz31_1.csv','axisScaleFont','axisScaleFontSize','fontSize','replace','push','size','axis','blue','text','CCT\x20(K)','type','Save\x20as\x20image','Arial','addciepoint','add\x20CIE\x20coordinate'];const _0x2e301f=_0x3639;(function(_0x15626f,_0xc18c86){const _0x3d142b=_0x3639;while(!![]){try{const _0x2bbf0b=parseInt(_0x3d142b(0x16e))+parseInt(_0x3d142b(0x17b))+-parseInt(_0x3d142b(0x19d))+parseInt(_0x3d142b(0x1bc))*parseInt(_0x3d142b(0x1b3))+-parseInt(_0x3d142b(0x17d))*-parseInt(_0x3d142b(0x1b7))+-parseInt(_0x3d142b(0x1b0))+parseInt(_0x3d142b(0x1ad));if(_0x2bbf0b===_0xc18c86)break;else _0x15626f['push'](_0x15626f['shift']());}catch(_0x191b18){_0x15626f['push'](_0x15626f['shift']());}}}(_0x4a2c,0x195bc));function preload(){img=loadImage('images/CIE1931gamut.png');}let xyzWavelength=[],xValues=[],yValues=[],zValues=[],z=0x0,wavelengthcol=[],intensitycol=[],wavelength=[],xdata=[],ydata=[],zdata=[],x,y,xcoordinate=[],ycoordinate=[],symbol=['∇','♠','♣','+','±','x','o','♥','♦','•','#','&'],symbolpoint=[],namesArray=[],inputx,inputy,inputcct,input_file_id,file_name,filename1,canvas;function setup(){const _0x4ca063=_0x3639;canvas=createCanvas(windowWidth*0x46/0x64,0x226),canvas[_0x4ca063(0x1be)](_0x4ca063(0x180)),ciegraph=new CIEGraph(),ciefileReader=new CIEFileReader(),ciefileReader['getData']();}function draw(){const _0x426134=_0x3639;background(0x100),ciegraph[_0x426134(0x1a1)](),ciegraph['axis'](),ciefileReader['text'](),ciefileReader['CIEpoint']();}function realTimeChanger(){}class CIEGraph{constructor(){const _0x1b5676=_0x3639;this[_0x1b5676(0x1bd)]=createSelect(),this[_0x1b5676(0x1bd)][_0x1b5676(0x1a9)](0x20d,0x8e),this[_0x1b5676(0x1bd)][_0x1b5676(0x1be)](_0x1b5676(0x180)),this[_0x1b5676(0x1bd)][_0x1b5676(0x1a8)]('fontSize','12px'),this[_0x1b5676(0x1bd)][_0x1b5676(0x1a8)](_0x1b5676(0x1aa),'80px'),this[_0x1b5676(0x1bd)][_0x1b5676(0x1a8)](_0x1b5676(0x1a7),_0x1b5676(0x1b4)),this['borderWidth'][_0x1b5676(0x19b)](0x1,'1'),this[_0x1b5676(0x1bd)][_0x1b5676(0x19b)](0x2,'2'),this[_0x1b5676(0x1bd)][_0x1b5676(0x19b)](0x3,'3'),this[_0x1b5676(0x1bd)][_0x1b5676(0x19b)](0x4,'4'),this['borderWidth'][_0x1b5676(0x19b)](0x5,'5'),this[_0x1b5676(0x1bd)][_0x1b5676(0x176)](realTimeChanger),this[_0x1b5676(0x189)]=createSelect(),this['axisScaleFontSize']['position'](0x226,0xf7),this[_0x1b5676(0x189)]['parent'](_0x1b5676(0x180)),this[_0x1b5676(0x189)][_0x1b5676(0x1a8)](_0x1b5676(0x18a),_0x1b5676(0x179)),this[_0x1b5676(0x189)][_0x1b5676(0x1a8)](_0x1b5676(0x1aa),_0x1b5676(0x177)),this['axisScaleFontSize']['style'](_0x1b5676(0x1a7),'18px'),this['axisScaleFontSize'][_0x1b5676(0x19b)](0xa,'10'),this[_0x1b5676(0x189)][_0x1b5676(0x19b)](0xc,'12'),this[_0x1b5676(0x189)]['option'](0xe,'14'),this[_0x1b5676(0x189)][_0x1b5676(0x19b)](0x10,'16'),this['axisScaleFontSize'][_0x1b5676(0x19b)](0x12,'18'),this[_0x1b5676(0x189)][_0x1b5676(0x176)](realTimeChanger),this['axisScaleFont']=createSelect(),this[_0x1b5676(0x188)][_0x1b5676(0x1a9)](0x280,0xb6),this['axisScaleFont'][_0x1b5676(0x1be)](_0x1b5676(0x180)),this[_0x1b5676(0x188)]['style'](_0x1b5676(0x18a),_0x1b5676(0x179)),this[_0x1b5676(0x188)][_0x1b5676(0x1a8)](_0x1b5676(0x1aa),_0x1b5676(0x19e)),this[_0x1b5676(0x188)]['style']('height',_0x1b5676(0x1b4)),this[_0x1b5676(0x188)][_0x1b5676(0x19b)](_0x1b5676(0x19f)),this['axisScaleFont'][_0x1b5676(0x19b)]('Arial'),this[_0x1b5676(0x188)][_0x1b5676(0x19b)](_0x1b5676(0x1a5)),this[_0x1b5676(0x188)][_0x1b5676(0x19b)](_0x1b5676(0x19c)),this[_0x1b5676(0x188)][_0x1b5676(0x176)](realTimeChanger),this[_0x1b5676(0x1ae)]=createSelect(),this[_0x1b5676(0x1ae)][_0x1b5676(0x1a9)](0x280,0xf6),this['axisFont'][_0x1b5676(0x1be)](_0x1b5676(0x180)),this[_0x1b5676(0x1ae)][_0x1b5676(0x1a8)]('fontSize',_0x1b5676(0x179)),this[_0x1b5676(0x1ae)][_0x1b5676(0x1a8)](_0x1b5676(0x1aa),_0x1b5676(0x19e)),this[_0x1b5676(0x1ae)][_0x1b5676(0x1a8)]('height',_0x1b5676(0x1b4)),this[_0x1b5676(0x1ae)][_0x1b5676(0x19b)]('Georgia'),this[_0x1b5676(0x1ae)][_0x1b5676(0x19b)](_0x1b5676(0x194)),this[_0x1b5676(0x1ae)][_0x1b5676(0x19b)](_0x1b5676(0x1a5)),this['axisFont'][_0x1b5676(0x19b)]('Times\x20New\x20Roman'),this[_0x1b5676(0x1ae)]['input'](realTimeChanger),this[_0x1b5676(0x16c)]=createSelect(),this[_0x1b5676(0x16c)][_0x1b5676(0x1a9)](0x28a,0x8c),this[_0x1b5676(0x16c)][_0x1b5676(0x1be)](_0x1b5676(0x180)),this['axisColor']['style'](_0x1b5676(0x18a),_0x1b5676(0x179)),this[_0x1b5676(0x16c)][_0x1b5676(0x1a8)](_0x1b5676(0x1aa),_0x1b5676(0x1a0)),this[_0x1b5676(0x16c)][_0x1b5676(0x1a8)]('height','18px'),this[_0x1b5676(0x16c)][_0x1b5676(0x19b)](_0x1b5676(0x17a)),this[_0x1b5676(0x16c)][_0x1b5676(0x19b)]('red'),this[_0x1b5676(0x16c)][_0x1b5676(0x19b)](_0x1b5676(0x16a)),this['axisColor']['option'](_0x1b5676(0x16d)),this['axisColor']['option'](_0x1b5676(0x185)),this[_0x1b5676(0x16c)][_0x1b5676(0x19b)](_0x1b5676(0x18f)),this['axisColor'][_0x1b5676(0x176)](realTimeChanger),this[_0x1b5676(0x1b9)]=createSelect(),this['axisTitleColor']['position'](0x20f,0xcc),this[_0x1b5676(0x1b9)]['parent'](_0x1b5676(0x180)),this['axisTitleColor']['style'](_0x1b5676(0x18a),_0x1b5676(0x179)),this[_0x1b5676(0x1b9)][_0x1b5676(0x1a8)](_0x1b5676(0x1aa),_0x1b5676(0x1a0)),this[_0x1b5676(0x1b9)][_0x1b5676(0x1a8)](_0x1b5676(0x1a7),_0x1b5676(0x1b4)),this[_0x1b5676(0x1b9)][_0x1b5676(0x19b)](_0x1b5676(0x17a)),this[_0x1b5676(0x1b9)][_0x1b5676(0x19b)](_0x1b5676(0x168)),this['axisTitleColor'][_0x1b5676(0x19b)](_0x1b5676(0x16a)),this[_0x1b5676(0x1b9)][_0x1b5676(0x19b)](_0x1b5676(0x16d)),this[_0x1b5676(0x1b9)]['option']('yellow'),this[_0x1b5676(0x1b9)][_0x1b5676(0x19b)](_0x1b5676(0x18f)),this[_0x1b5676(0x1b9)][_0x1b5676(0x176)](realTimeChanger),this[_0x1b5676(0x1ba)]=createSelect(),this[_0x1b5676(0x1ba)][_0x1b5676(0x1a9)](0x212,0x10e),this[_0x1b5676(0x1ba)]['parent'](_0x1b5676(0x180)),this[_0x1b5676(0x1ba)][_0x1b5676(0x1a8)](_0x1b5676(0x18a),_0x1b5676(0x179)),this[_0x1b5676(0x1ba)][_0x1b5676(0x1a8)](_0x1b5676(0x1aa),_0x1b5676(0x1a0)),this[_0x1b5676(0x1ba)][_0x1b5676(0x1a8)]('height',_0x1b5676(0x1b4)),this[_0x1b5676(0x1ba)][_0x1b5676(0x19b)](_0x1b5676(0x17a)),this[_0x1b5676(0x1ba)][_0x1b5676(0x19b)](_0x1b5676(0x168)),this[_0x1b5676(0x1ba)][_0x1b5676(0x19b)](_0x1b5676(0x16a)),this[_0x1b5676(0x1ba)]['option'](_0x1b5676(0x16d)),this[_0x1b5676(0x1ba)][_0x1b5676(0x19b)](_0x1b5676(0x185)),this['axisScaleColor']['option']('blue'),this[_0x1b5676(0x1ba)]['input'](realTimeChanger),this['scaleTitleFontSize']=createSelect(),this['scaleTitleFontSize'][_0x1b5676(0x1a9)](0x221,0xb6),this[_0x1b5676(0x16b)][_0x1b5676(0x1be)](_0x1b5676(0x180)),this['scaleTitleFontSize'][_0x1b5676(0x1a8)](_0x1b5676(0x18a),_0x1b5676(0x179)),this[_0x1b5676(0x16b)][_0x1b5676(0x1a8)](_0x1b5676(0x1aa),_0x1b5676(0x177)),this[_0x1b5676(0x16b)][_0x1b5676(0x1a8)](_0x1b5676(0x1a7),_0x1b5676(0x1b4)),this['scaleTitleFontSize'][_0x1b5676(0x19b)](0xa,'10'),this['scaleTitleFontSize'][_0x1b5676(0x19b)](0xc,'12'),this[_0x1b5676(0x16b)][_0x1b5676(0x19b)](0xe,'14'),this[_0x1b5676(0x16b)][_0x1b5676(0x19b)](0x10,'16'),this['scaleTitleFontSize'][_0x1b5676(0x19b)](0x12,'18'),this[_0x1b5676(0x16b)][_0x1b5676(0x19b)](0x14,'20'),this[_0x1b5676(0x16b)]['option'](0x16,'22'),this[_0x1b5676(0x16b)]['input'](realTimeChanger);}[_0x2e301f(0x18e)](){const _0x47c362=_0x2e301f;textAlign(CENTER),strokeWeight(0x1),line(0x1de,0x0,0x1de,0x226),line(0x2fa,0x0,0x2fa,0x226),line(0x0,0x226,0x2f8,0x226),line(0x1e0,0x78,0x2f8,0x78),line(0x1e0,0xa2,0x2f8,0xa2),line(0x1e0,0xe1,0x2f8,0xe1),line(0x1e0,0x122,0x2f8,0x122),push(),translate(0x64,0x1ce),stroke(this[_0x47c362(0x16c)][_0x47c362(0x199)]()),strokeWeight(this[_0x47c362(0x1bd)][_0x47c362(0x199)]()),line(0x0,0x0,0x150,0x0),line(0x0,0x0,0x0,-0x17a),line(0x0,-0x17a,0x150,-0x17a),line(0x150,0x0,0x150,-0x17a),strokeWeight(this[_0x47c362(0x1bd)]['value']());for(let _0x54849c=0x0;_0x54849c<=0x150;_0x54849c=_0x54849c+0x54){line(_0x54849c,0x0,_0x54849c,0xa),line(_0x54849c+0x2a,0x0,_0x54849c+0x2a,0x5),line(0x0,-_0x54849c,-0xa,-_0x54849c),line(0x0,-_0x54849c-0x2a,-0x5,-_0x54849c-0x2a);}strokeWeight(Number(this[_0x47c362(0x189)][_0x47c362(0x199)]())/0xf),textSize(Number(this[_0x47c362(0x189)]['value']())),fill(this[_0x47c362(0x1ba)][_0x47c362(0x199)]()),stroke(this[_0x47c362(0x1ba)][_0x47c362(0x199)]()),textFont(''+this[_0x47c362(0x1ae)][_0x47c362(0x199)]());for(let _0x131ce7=0x0;_0x131ce7<=0x150;_0x131ce7=_0x131ce7+0x54){text(''+round(0.2*(_0x131ce7/0x54),0x1),_0x131ce7,0x19),_0x131ce7<0x12c&&text(''+round(0.2*((_0x131ce7+0x54)/0x54),0x1),-0x1a,-_0x131ce7-0x52);}pop(),push(),fill(this[_0x47c362(0x1b9)][_0x47c362(0x199)]()),textFont(''+this['axisScaleFont'][_0x47c362(0x199)]()),textSize(Number(this[_0x47c362(0x16b)][_0x47c362(0x199)]())),text('x',0x10e,0x1f9),text('y',0x37,0x118),pop(),fill(_0x47c362(0x17a)),textSize(0xc),textStyle(BOLD),text(_0x47c362(0x198),0x1fe,0x87),text('Axis:',0x1f9,0xf3),text(_0x47c362(0x183),0x203,0xb2),text(_0x47c362(0x169),0x203,0x136),textStyle(ITALIC),textSize(0xc),textFont(_0x47c362(0x194)),text(_0x47c362(0x1a6),0x276,0x9b),text(_0x47c362(0x1a6),0x1f9,0xd9),text(_0x47c362(0x1a6),0x1f9,0x11d),text(_0x47c362(0x1a6),0x1f9,0x163),text(_0x47c362(0x1a2),0x1f9,0x9b),text(_0x47c362(0x19a),0x26c,0xc3),text(_0x47c362(0x19a),0x26c,0x104),text('Font',0x26c,0x14a),text(_0x47c362(0x1b8),0x203,0xc3),text(_0x47c362(0x1b8),0x203,0x104),text(_0x47c362(0x1b8),0x203,0x14a),text(_0x47c362(0x173),0x1fe,0x55),textSize(0x1c),textStyle(NORMAL),textFont('Walter\x20Turncoat'),text(_0x47c362(0x1af),0xfa,0x32);}[_0x2e301f(0x1a1)](){image(img,71.8,0x50,0x175,0x187);}}function _0x3639(_0x2b9b99,_0x20e95a){return _0x3639=function(_0x4a2cc0,_0x363989){_0x4a2cc0=_0x4a2cc0-0x168;let _0x69295f=_0x4a2c[_0x4a2cc0];return _0x69295f;},_0x3639(_0x2b9b99,_0x20e95a);}class CIEFileReader{constructor(){const _0x20af7e=_0x2e301f;this[_0x20af7e(0x197)]=createFileInput(this[_0x20af7e(0x170)]),this[_0x20af7e(0x197)][_0x20af7e(0x1a9)](0x1ea,0x14),this[_0x20af7e(0x197)][_0x20af7e(0x1be)]('forCanvas'),this['addbutton']=createButton(_0x20af7e(0x1a4)),this[_0x20af7e(0x17e)]['position'](0x2af,0x14),this[_0x20af7e(0x17e)][_0x20af7e(0x1be)](_0x20af7e(0x180)),this['addbutton'][_0x20af7e(0x182)](this['calculexy']),this[_0x20af7e(0x195)]=createButton(_0x20af7e(0x196)),this['addciepoint']['position'](0x276,0x46),this[_0x20af7e(0x195)][_0x20af7e(0x1be)](_0x20af7e(0x180)),this[_0x20af7e(0x195)][_0x20af7e(0x182)](this[_0x20af7e(0x184)]),this[_0x20af7e(0x181)]=createButton(_0x20af7e(0x1b2)),this[_0x20af7e(0x181)][_0x20af7e(0x1a9)](0x1ea,0x5f),this['removeciepoint']['parent'](_0x20af7e(0x180)),this[_0x20af7e(0x181)][_0x20af7e(0x182)](this[_0x20af7e(0x1a3)]),this[_0x20af7e(0x17f)]=createButton(_0x20af7e(0x193)),this[_0x20af7e(0x17f)]['position'](0x290,0x5f),this[_0x20af7e(0x17f)]['parent'](_0x20af7e(0x180)),this[_0x20af7e(0x17f)][_0x20af7e(0x182)](this[_0x20af7e(0x1ab)]),inputx=createInput(),inputx['position'](0x1f6,0x2d),inputx[_0x20af7e(0x18d)](0x28),inputx[_0x20af7e(0x1be)](_0x20af7e(0x180)),inputy=createInput(),inputy[_0x20af7e(0x1a9)](0x23c,0x2d),inputy['size'](0x28),inputy[_0x20af7e(0x1be)]('forCanvas'),inputcct=createInput(),inputcct['position'](0x2a8,0x2d),inputcct[_0x20af7e(0x18d)](0x48),inputcct[_0x20af7e(0x1be)](_0x20af7e(0x180)),input_file_id=createInput(),input_file_id[_0x20af7e(0x1a9)](0x212,0x46),input_file_id[_0x20af7e(0x18d)](0x50),input_file_id[_0x20af7e(0x1be)](_0x20af7e(0x180)),this[_0x20af7e(0x16f)]=createSelect(),this[_0x20af7e(0x16f)][_0x20af7e(0x1a9)](0x226,0x13d),this[_0x20af7e(0x16f)]['parent'](_0x20af7e(0x180)),this['legendFontSize'][_0x20af7e(0x1a8)](_0x20af7e(0x18a),'12px'),this['legendFontSize'][_0x20af7e(0x1a8)](_0x20af7e(0x1aa),_0x20af7e(0x177)),this['legendFontSize']['style'](_0x20af7e(0x1a7),_0x20af7e(0x1b4)),this[_0x20af7e(0x16f)]['option'](0xa,'10'),this[_0x20af7e(0x16f)][_0x20af7e(0x19b)](0xc,'12'),this['legendFontSize'][_0x20af7e(0x19b)](0xe,'14'),this[_0x20af7e(0x16f)][_0x20af7e(0x19b)](0x10,'16'),this[_0x20af7e(0x16f)]['option'](0x12,'18'),this[_0x20af7e(0x16f)][_0x20af7e(0x176)](realTimeChanger),this['legendFont']=createSelect(),this[_0x20af7e(0x17c)]['position'](0x280,0x13d),this['legendFont'][_0x20af7e(0x1be)](_0x20af7e(0x180)),this[_0x20af7e(0x17c)]['style'](_0x20af7e(0x18a),'12px'),this[_0x20af7e(0x17c)][_0x20af7e(0x1a8)](_0x20af7e(0x1aa),_0x20af7e(0x19e)),this[_0x20af7e(0x17c)][_0x20af7e(0x1a8)](_0x20af7e(0x1a7),_0x20af7e(0x1b4)),this[_0x20af7e(0x17c)]['option'](_0x20af7e(0x19f)),this['legendFont'][_0x20af7e(0x19b)]('Arial'),this[_0x20af7e(0x17c)][_0x20af7e(0x19b)](_0x20af7e(0x1a5)),this['legendFont'][_0x20af7e(0x19b)](_0x20af7e(0x19c)),this['legendFont'][_0x20af7e(0x176)](realTimeChanger),this[_0x20af7e(0x186)]=createSelect(),this['legendColor'][_0x20af7e(0x1a9)](0x20f,0x156),this[_0x20af7e(0x186)][_0x20af7e(0x1be)](_0x20af7e(0x180)),this[_0x20af7e(0x186)][_0x20af7e(0x1a8)](_0x20af7e(0x18a),_0x20af7e(0x179)),this[_0x20af7e(0x186)][_0x20af7e(0x1a8)](_0x20af7e(0x1aa),_0x20af7e(0x1a0)),this[_0x20af7e(0x186)][_0x20af7e(0x1a8)]('height',_0x20af7e(0x1b4)),this[_0x20af7e(0x186)][_0x20af7e(0x19b)]('black'),this[_0x20af7e(0x186)]['option'](_0x20af7e(0x168)),this['legendColor'][_0x20af7e(0x19b)](_0x20af7e(0x16a)),this[_0x20af7e(0x186)][_0x20af7e(0x19b)](_0x20af7e(0x16d)),this[_0x20af7e(0x186)]['option']('yellow'),this[_0x20af7e(0x186)]['option'](_0x20af7e(0x18f)),this['legendColor'][_0x20af7e(0x176)](realTimeChanger);}async['getData'](){const _0x51dc67=_0x2e301f,_0xd9ab9c=await fetch(_0x51dc67(0x187)),_0x2a937d=await _0xd9ab9c[_0x51dc67(0x190)](),_0x28e624=_0x2a937d['split']('\x0a')[_0x51dc67(0x178)]();_0x28e624[_0x51dc67(0x1b1)](_0xedd03e=>{const _0x255782=_0x51dc67,_0x1cb11a=_0xedd03e[_0x255782(0x1bf)](',');wavelength[_0x255782(0x18c)](float(_0x1cb11a[0x0])),xdata[_0x255782(0x18c)](float(_0x1cb11a[0x1])),ydata[_0x255782(0x18c)](float(_0x1cb11a[0x2])),zdata[_0x255782(0x18c)](float(_0x1cb11a[0x3]));});}[_0x2e301f(0x190)](){const _0x558b76=_0x2e301f;textSize(0x10),text('x',0x1ef,0x3c),text('y',0x235,0x3c),text(_0x558b76(0x191),0x28a,0x3c);}[_0x2e301f(0x170)](_0x5d04ca){const _0x4f5d38=_0x2e301f;wavelengthcol=[],intensitycol=[];if(_0x5d04ca[_0x4f5d38(0x192)]===_0x4f5d38(0x190)){let _0x393e20=_0x5d04ca['data'][_0x4f5d38(0x1bf)]('\x0a');_0x393e20[_0x4f5d38(0x1b1)](_0x33dbf0=>{const _0x193a25=_0x4f5d38;let _0x399274=/^[0-9,\s|.]/,_0x5d80a3=_0x399274[_0x193a25(0x1bb)](_0x33dbf0);if(_0x5d80a3){let _0x1808fe=_0x33dbf0[_0x193a25(0x18b)]('\x09',','),_0x5b7f21=_0x1808fe[_0x193a25(0x1bf)](',');wavelengthcol[_0x193a25(0x18c)](_0x5b7f21[0x0]),intensitycol['push'](_0x5b7f21[0x1]);}else{}}),print(wavelengthcol,intensitycol);}else alert(_0x4f5d38(0x1b5));file_name=str(_0x5d04ca[_0x4f5d38(0x171)]),filename1=file_name[_0x4f5d38(0x1bf)]('.');}[_0x2e301f(0x175)](){const _0x385278=_0x2e301f;xyzWavelength=[],xValues=[],yValues=[],zValues=[];for(let _0x35e08f=0x0;_0x35e08f<=wavelength[_0x385278(0x174)];_0x35e08f++){for(let _0x52b302=0x0;_0x52b302<=wavelengthcol[_0x385278(0x174)];_0x52b302++){let _0x33e5a9=wavelength[_0x35e08f],_0x1f5da2=round(float(wavelengthcol[_0x52b302]));if(_0x33e5a9===_0x1f5da2)xyzWavelength[_0x385278(0x18c)](_0x1f5da2),xValues[_0x385278(0x18c)](float(intensitycol[_0x52b302])*xdata[_0x35e08f]),yValues[_0x385278(0x18c)](float(intensitycol[_0x52b302])*ydata[_0x35e08f]),zValues[_0x385278(0x18c)](float(intensitycol[_0x52b302])*zdata[_0x35e08f]);else{}}}let _0x2ea7f0=0x0,_0xb76d5f=0x0,_0x3b07c4=0x0;for(let _0x1a81ce=0x0;_0x1a81ce<xyzWavelength[_0x385278(0x174)];_0x1a81ce++){_0x2ea7f0+=xValues[_0x1a81ce],_0xb76d5f+=yValues[_0x1a81ce],_0x3b07c4+=zValues[_0x1a81ce];}x=_0x2ea7f0/(_0x2ea7f0+_0xb76d5f+_0x3b07c4),y=_0xb76d5f/(_0x2ea7f0+_0xb76d5f+_0x3b07c4),print(x,y);let _0x4c7ccf,_0x3a4f9e;_0x4c7ccf=(x-0.332)/(0.1858-y),_0x3a4f9e=0x1b5*pow(_0x4c7ccf,0x3)+0xe11*pow(_0x4c7ccf,0x2)+0x1acd*_0x4c7ccf+0x158d,inputx[_0x385278(0x199)](round(x,0x3)),inputy[_0x385278(0x199)](round(y,0x3)),inputcct[_0x385278(0x199)](round(_0x3a4f9e,0x2)),input_file_id['value'](filename1[0x0]);}[_0x2e301f(0x184)](){const _0x1f8b8e=_0x2e301f;let _0x163180=inputx[_0x1f8b8e(0x199)](),_0x4deef1=inputy[_0x1f8b8e(0x199)](),_0x770eb1=input_file_id['value']();xcoordinate['push'](round(_0x163180,0x3)),ycoordinate[_0x1f8b8e(0x18c)](round(_0x4deef1,0x3)),symbolpoint['push'](symbol[z]),namesArray['push'](_0x770eb1),z++,print(x,y,xcoordinate);}[_0x2e301f(0x1b6)](){const _0x4ef8bb=_0x2e301f;push(),fill(this[_0x4ef8bb(0x186)][_0x4ef8bb(0x199)]()),textFont(this['legendFont'][_0x4ef8bb(0x199)]()),textSize(Number(this[_0x4ef8bb(0x16f)][_0x4ef8bb(0x199)]())),textAlign(LEFT),textStyle(NORMAL);for(let _0x30c756=0x0;_0x30c756<=xcoordinate[_0x4ef8bb(0x174)]-0x1;_0x30c756++){push(),translate(0x64,0x1ce),text(''+symbolpoint[_0x30c756],float(xcoordinate[_0x30c756])*0x1a4-Number(this[_0x4ef8bb(0x16f)][_0x4ef8bb(0x199)]())/3.5,float(ycoordinate[_0x30c756]*-0x1a4)+Number(this['legendFontSize'][_0x4ef8bb(0x199)]())/3.5),pop(),push(),translate(0x0,0x64),text(symbolpoint[_0x30c756]+'\x20'+namesArray[_0x30c756],0x12c,_0x30c756*0x14),pop();}pop();}[_0x2e301f(0x1a3)](){const _0x430849=_0x2e301f;xcoordinate[_0x430849(0x1ac)](-0x1,0x1),ycoordinate[_0x430849(0x1ac)](-0x1,0x1),symbolpoint['splice'](-0x1,0x1),namesArray[_0x430849(0x1ac)](-0x1,0x1);}[_0x2e301f(0x1ab)](){const _0x4229c1=_0x2e301f;var _0x3edc07=get(0x14,0x14,0x1c2,0x1fe);save(_0x3edc07,_0x4229c1(0x172));}}
+function preload(){
+    img = loadImage('images/CIE1931gamut.png');
+}
+
+// global variable for the calculatexyz method in CIEFileReader class 
+let xyzWavelength = [];
+let xValues = [];
+let yValues = [];
+let zValues = [];
+
+let z = 0;
+
+// global variable for userLoadedFile method in CIEFileReader class 
+let wavelengthcol = [];
+let intensitycol = [];
+
+// global variable for getData method in CIEFileReader class 
+let wavelength = [];
+let xdata = [];
+let ydata = [];
+let zdata = [];
+
+//CIE chromaticity coordinates x, y
+let x, y;
+
+// x and y coordinate poits
+let xcoordinate = [];
+let ycoordinate = [];
+
+//symbol array
+let symbol = ['\u2207', '\u2660', '\u2663', '+', '±', 'x', 'o', '\u2665', '\u2666', '\u2022', '#', '&'];
+let symbolpoint = [];
+let namesArray = [];
+
+let inputx, inputy, inputcct, input_file_id;
+
+let file_name, filename1;
+
+let canvas
+
+function setup(){
+    canvas = createCanvas(windowWidth*70/100, 550);
+    canvas.parent("forCanvas");
+    ciegraph = new CIEGraph();
+    ciefileReader = new CIEFileReader();
+    ciefileReader.getData();
+}
+
+function draw(){
+    background(256);
+    ciegraph.CIEimage();
+    ciegraph.axis();
+    ciefileReader.text();
+    ciefileReader.CIEpoint();
+}
+
+function realTimeChanger(){
+    //nothing here but it works
+}
+
+class CIEGraph{
+    constructor(){
+
+        this.borderWidth = createSelect();
+        this.borderWidth.position(525, 142);
+        this.borderWidth.parent("forCanvas");
+        this.borderWidth.style('fontSize', '12px');
+        this.borderWidth.style('width', '80px');
+        this.borderWidth.style('height', '18px');
+        this.borderWidth.option(1, '1'); 
+        this.borderWidth.option(2, '2');
+        this.borderWidth.option(3, '3');
+        this.borderWidth.option(4, '4');
+        this.borderWidth.option(5, '5');
+        this.borderWidth.input(realTimeChanger);
+
+        this.axisScaleFontSize = createSelect();
+        this.axisScaleFontSize.position(550, 247);
+        this.axisScaleFontSize.parent("forCanvas");
+        this.axisScaleFontSize.style('fontSize', '12px');
+        this.axisScaleFontSize.style('width', '40px');
+        this.axisScaleFontSize.style('height', '18px');
+        this.axisScaleFontSize.option(10, '10'); 
+        this.axisScaleFontSize.option(12, '12');
+        this.axisScaleFontSize.option(14, '14');
+        this.axisScaleFontSize.option(16, '16');
+        this.axisScaleFontSize.option(18, '18');
+        this.axisScaleFontSize.input(realTimeChanger);
+
+        this.axisScaleFont = createSelect();
+        this.axisScaleFont.position(640, 182);
+        this.axisScaleFont.parent("forCanvas");
+        this.axisScaleFont.style('fontSize', '12px');
+        this.axisScaleFont.style('width', '120px');
+        this.axisScaleFont.style('height', '18px');
+        this.axisScaleFont.option("Georgia"); 
+        this.axisScaleFont.option("Arial");
+        this.axisScaleFont.option("Walter Turncoat");
+        this.axisScaleFont.option("Times New Roman");
+        this.axisScaleFont.input(realTimeChanger);
+
+        this.axisFont = createSelect();
+        this.axisFont.position(640, 246);
+        this.axisFont.parent("forCanvas");
+        this.axisFont.style('fontSize', '12px');
+        this.axisFont.style('width', '120px');
+        this.axisFont.style('height', '18px');
+        this.axisFont.option("Georgia"); 
+        this.axisFont.option("Arial");
+        this.axisFont.option("Walter Turncoat");
+        this.axisFont.option("Times New Roman");
+        this.axisFont.input(realTimeChanger);
+
+        this.axisColor = createSelect();
+        this.axisColor.position(650, 140);
+        this.axisColor.parent("forCanvas");
+        this.axisColor.style('fontSize', '12px');
+        this.axisColor.style('width', '110px');
+        this.axisColor.style('height', '18px');
+        this.axisColor.option("black"); 
+        this.axisColor.option("red");
+        this.axisColor.option("green");
+        this.axisColor.option("magenta");
+        this.axisColor.option("yellow");
+        this.axisColor.option("blue");
+        this.axisColor.input(realTimeChanger); 
+
+        this.axisTitleColor = createSelect();
+        this.axisTitleColor.position(527, 204);
+        this.axisTitleColor.parent("forCanvas");
+        this.axisTitleColor.style('fontSize', '12px');
+        this.axisTitleColor.style('width', '110px');
+        this.axisTitleColor.style('height', '18px');
+        this.axisTitleColor.option("black"); 
+        this.axisTitleColor.option("red");
+        this.axisTitleColor.option("green");
+        this.axisTitleColor.option("magenta");
+        this.axisTitleColor.option("yellow");
+        this.axisTitleColor.option("blue");
+        this.axisTitleColor.input(realTimeChanger);
+
+        this.axisScaleColor = createSelect();
+        this.axisScaleColor.position(530, 270);
+        this.axisScaleColor.parent("forCanvas");
+        this.axisScaleColor.style('fontSize', '12px');
+        this.axisScaleColor.style('width', '110px');
+        this.axisScaleColor.style('height', '18px');
+        this.axisScaleColor.option("black"); 
+        this.axisScaleColor.option("red");
+        this.axisScaleColor.option("green");
+        this.axisScaleColor.option("magenta");
+        this.axisScaleColor.option("yellow");
+        this.axisScaleColor.option("blue");
+        this.axisScaleColor.input(realTimeChanger);
+
+        this.scaleTitleFontSize = createSelect();
+        this.scaleTitleFontSize.position(545, 182);
+        this.scaleTitleFontSize.parent("forCanvas");
+        this.scaleTitleFontSize.style('fontSize', '12px');
+        this.scaleTitleFontSize.style('width', '40px');
+        this.scaleTitleFontSize.style('height', '18px');
+        this.scaleTitleFontSize.option(10, '10'); 
+        this.scaleTitleFontSize.option(12, '12');
+        this.scaleTitleFontSize.option(14, '14');
+        this.scaleTitleFontSize.option(16, '16');
+        this.scaleTitleFontSize.option(18, '18');
+        this.scaleTitleFontSize.option(20, '20');
+        this.scaleTitleFontSize.option(22, '22');
+        this.scaleTitleFontSize.input(realTimeChanger);
+
+    }
+    axis(){
+        textAlign(CENTER);
+        strokeWeight(1)
+        line(478, 0, 478, 550);
+        line(762, 0, 762, 550);
+        line(0, 550, 760, 550);
+        line(480, 120, 760, 120);
+        line(480, 162, 760, 162);
+        line(480, 225, 760, 225);
+        line(480, 290, 760, 290);
+        push();
+        translate(100, 462);
+        stroke(this.axisColor.value());
+        strokeWeight(this.borderWidth.value());
+        line(0, 0, 336, 0);
+        line(0, 0, 0, -378);
+        line(0, -378, 336, -378);
+        line(336, 0, 336, -378);
+        
+        strokeWeight(this.borderWidth.value());
+        for(let i = 0; i <= 336; i = i + 84){
+            line(i, 0, i, 10);
+            line(i + 42, 0, i + 42, 5);
+            line(0, -i, -10, -i);
+            line(0, -i-42, -5, -i-42);
+        }
+        
+        strokeWeight(Number(this.axisScaleFontSize.value())/15);
+        textSize(Number(this.axisScaleFontSize.value())); 
+        fill(this.axisScaleColor.value());
+        stroke(this.axisScaleColor.value());
+        textFont(`${this.axisFont.value()}`);  
+        for(let q = 0; q <= 336; q = q + 84){
+            text(`${round(0.2*(q/84), 1)}`, q, 25);
+            if(q < 300){
+                text(`${round(0.2*((q+84)/84), 1)}`, -26, -q-82);
+            }
+        }
+        // strokeWeight(1);
+        // noFill();
+        // beginShape();
+        // for(let l = 0; l < xdata.length; l++){
+        //     vertex((xdata[l]/(xdata[l]+ydata[l]+zdata[l]))*420, (ydata[l]/(xdata[l]+ydata[l]+zdata[l]))*(-420));
+        // }
+        // endShape(CLOSE);
+        pop();
+
+        push();
+        fill(this.axisTitleColor.value());
+        textFont(`${this.axisScaleFont.value()}`);
+        textSize(Number(this.scaleTitleFontSize.value()));
+        text('x', 270, 505);
+        text('y', 55, 280);
+        pop();
+
+        fill('black');
+        textSize(12);
+        textStyle(BOLD);
+        text('Border:', 510, 135);
+        text('Axis:', 505, 243);
+        text('Axis title:', 515, 178);
+        text('Legends:', 515, 310);
+
+        textStyle(ITALIC);
+        textSize(12);
+        textFont("Arial");
+        text('Color', 630, 155);  // border color
+        text('Color', 505, 217);  // axis title color
+        text('Color', 505, 285);  // for axis
+        text('Color', 505, 355);  // for legends
+        text('Width', 505, 155);
+        text('Font', 620, 195);   // for axis title
+        text('Font', 620, 260);   // for axis
+        text('Font', 620, 330);   // for legends
+        text('Font size', 515, 195);  // axis title
+        text('Font size', 515, 260);  // for axis
+        text('Font size', 515, 330);   // for legends
+        text('File id:', 510, 85);
+
+        textSize(28);
+        textStyle(NORMAL);
+        textFont('Walter Turncoat')
+        text('CIE chromaticiy diagram 1931', 250, 50);
+    }
+    CIEimage(){
+        image(img, 71.8, 80, 373, 391);
+    }
+}
+
+class CIEFileReader{
+    constructor(){
+
+        this.input_file = createFileInput(this.userFileLoaded);
+        this.input_file.position(490, 20);
+        this.input_file.parent("forCanvas");
+
+        this.addbutton = createButton('Calculate');
+        this.addbutton.position(687, 20);
+        this.addbutton.parent("forCanvas");
+        this.addbutton.mousePressed(this.calculexy);
+
+        this.addciepoint = createButton('add CIE coordinate');
+        this.addciepoint.position(630, 70);
+        this.addciepoint.parent("forCanvas");
+        this.addciepoint.mousePressed(this.addCIEpoint);
+
+        this.removeciepoint = createButton('Remove CIE coordinate');
+        this.removeciepoint.position(490, 95);
+        this.removeciepoint.parent("forCanvas");
+        this.removeciepoint.mousePressed(this.removeCIEpoint);  
+
+        this.save_image = createButton('Save as image');
+        this.save_image.position(656, 95);
+        this.save_image.parent("forCanvas");
+        this.save_image.mousePressed(this.saveImage);
+
+        inputx = createInput();
+        inputx.position(502, 45);
+        inputx.size(40);
+        inputx.parent("forCanvas");
+    
+        inputy = createInput();
+        inputy.position(572, 45);
+        inputy.size(40);
+        inputy.parent("forCanvas");
+
+        inputcct = createInput();
+        inputcct.position(680, 45);
+        inputcct.size(72);
+        inputcct.parent("forCanvas");
+
+        input_file_id = createInput();
+        input_file_id.position(530, 70);
+        input_file_id.size(80);
+        input_file_id.parent("forCanvas");
+
+        this.legendFontSize = createSelect();
+        this.legendFontSize.position(550, 317);
+        this.legendFontSize.parent("forCanvas");
+        this.legendFontSize.style('fontSize', '12px');
+        this.legendFontSize.style('width', '40px');
+        this.legendFontSize.style('height', '18px');
+        this.legendFontSize.option(10, '10'); 
+        this.legendFontSize.option(12, '12');
+        this.legendFontSize.option(14, '14');
+        this.legendFontSize.option(16, '16');
+        this.legendFontSize.option(18, '18');
+        this.legendFontSize.input(realTimeChanger);
+
+        this.legendFont = createSelect();
+        this.legendFont.position(640, 317);
+        this.legendFont.parent("forCanvas");
+        this.legendFont.style('fontSize', '12px');
+        this.legendFont.style('width', '120px');
+        this.legendFont.style('height', '18px');
+        this.legendFont.option("Georgia"); 
+        this.legendFont.option("Arial");
+        this.legendFont.option("Walter Turncoat");
+        this.legendFont.option("Times New Roman");
+        this.legendFont.input(realTimeChanger);
+
+        this.legendColor = createSelect();
+        this.legendColor.position(527, 342);
+        this.legendColor.parent("forCanvas");
+        this.legendColor.style('fontSize', '12px');
+        this.legendColor.style('width', '110px');
+        this.legendColor.style('height', '18px');
+        this.legendColor.option("black"); 
+        this.legendColor.option("red");
+        this.legendColor.option("green");
+        this.legendColor.option("magenta");
+        this.legendColor.option("yellow");
+        this.legendColor.option("blue");
+        this.legendColor.input(realTimeChanger);
+
+    }
+    async getData(){
+        const response = await fetch('files/ciexyz31_1.csv');
+        const data = await response.text();
+    
+        const rows = data.split('\n').slice();
+        rows.forEach(element => {
+            const row = element.split(',');
+            wavelength.push(float(row[0]));
+            xdata.push(float(row[1]));
+            ydata.push(float(row[2]));
+            zdata.push(float(row[3]));
+        })
+    }
+
+    text(){
+        textSize(16);
+        text('x', 495, 60);
+        text('y', 565, 60);
+        text('CCT (K)', 650, 60);
+    }
+
+    userFileLoaded(file){
+        wavelengthcol = [];
+        intensitycol = [];
+        
+        let index = file.name.lastIndexOf('.');
+        let fileExt = file.name.substring(index);
+        if(fileExt === '.txt' || fileExt === '.csv' || fileExt === '.uxd' || fileExt === '.xls' || fileExt === '.xlsx'){
+            let fileString = file.data.split(/\r\n|\n/);
+            fileString.forEach(element => {
+                if(/[^0-9,.\s\tEe+-]/g.test(element)){
+                    //pass
+                }else if(element == ''){
+                    //pass;
+                }else{
+                    let rowTrimed = element.replace(/^\s+|\s+$/gm,'');
+                    if(/[,]|\s+/.test(rowTrimed)){
+                        let toArrays = rowTrimed.replace(/[,]|\s+/, '\t');
+                        let row = toArrays.split('\t');
+                        wavelengthcol.push(row[0]);
+                        intensitycol.push(row[1]);
+                    }else{
+                        alert(`the delemiter must be ','/'Tab'`)
+                    }
+                }
+            })
+            print(wavelengthcol, intensitycol);
+        }else{
+            alert('load txt or csv file format please')
+        }
+        file_name = str(file.name);
+        filename1 = file_name.split('.');
+    }
+
+    calculexy(){
+        xyzWavelength = [];
+        xValues = [];
+        yValues = [];
+        zValues = [];
+        // for calculating the x, y, and cct values
+        for(let m = 0; m <= wavelength.length; m++){
+            for(let n = 0; n <= wavelengthcol.length; n++){
+                let num = wavelength[m];
+                let roundedWavelength = round(float(wavelengthcol[n]));
+                if(num === roundedWavelength){
+                    xyzWavelength.push(roundedWavelength);
+                    xValues.push(float(intensitycol[n]) * xdata[m]);
+                    yValues.push(float(intensitycol[n]) * ydata[m]);
+                    zValues.push(float(intensitycol[n]) * zdata[m]);
+                }else{
+                    //pass;
+                }
+            }
+        }
+        let sumX = 0;
+        let sumY = 0;
+        let sumZ = 0;
+        for(let i = 0; i < xyzWavelength.length; i++){
+            sumX += xValues[i];
+            sumY += yValues[i];
+            sumZ += zValues[i];
+        }
+        x = sumX/(sumX + sumY + sumZ);
+        y = sumY/(sumX + sumY + sumZ);
+
+        print(x, y);
+        let n, cct;
+        n = (x-0.332)/(0.1858-y);
+        cct = (437*pow(n, 3)) + (3601*pow(n, 2)) + (6861*n) + (5517);
+        inputx.value(round(x, 3));
+        inputy.value(round(y, 3));
+        inputcct.value(round(cct, 2));
+        input_file_id.value(filename1[0]);
+    }
+
+    addCIEpoint(){
+        let x1 = inputx.value();
+        let y1 = inputy.value();
+        let file_id = input_file_id.value();
+            xcoordinate.push(round(x1, 3));
+            ycoordinate.push(round(y1, 3));
+            symbolpoint.push(symbol[z]);
+            namesArray.push(file_id);
+
+        z++;
+        print(x, y, xcoordinate);
+    }
+
+    CIEpoint(){
+        push();
+        fill(this.legendColor.value());
+        textFont(this.legendFont.value());
+        textSize(Number(this.legendFontSize.value()));
+        textAlign(LEFT);
+        textStyle(NORMAL);
+        for(let j = 0; j <= xcoordinate.length-1; j++){
+            push();
+            translate(100, 462);
+            text(`${symbolpoint[j]}`, (float(xcoordinate[j])*420)-(Number(this.legendFontSize.value()))/3.5, (float(ycoordinate[j]*-420)) + (Number(this.legendFontSize.value()))/3.5);
+            pop();
+            push();
+            translate(0, 100);
+            text(`${symbolpoint[j]} ` + namesArray[j], 300, j*20);
+            pop();
+        }
+        pop();
+    }
+    removeCIEpoint(){
+        xcoordinate.splice(-1, 1);
+        ycoordinate.splice(-1, 1);
+        symbolpoint.splice(-1, 1);
+        namesArray.splice(-1, 1);
+        
+    }
+    saveImage(){
+        var to_save = get( 20, 20, 450, 510 ); 
+        save(to_save, "CIE1931chromaticitydiagram.png");
+    }
+}
+
+
+
+
+
+
+
+
+

@@ -1,122 +1,154 @@
 body {
-    width: 100%; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0; padding: 0;
-  }
+  width: 100%; font-family: sans-serif; position: relative;
+  margin: 0; padding: 0; 
+}
+
 .navbar{
-    width: 100%; height: 50px; background-color: black; margin: 0;
-    position: fixed; top: 0; z-index: 2;
-  }
+  width: 100%; height: 70px; background-color: black; margin: 0;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1; display: flex; flex-direction: row;
+}
 #check{
-    display: none;
-  }
+  display: none; position: absolute;
+}
+.logo{
+  position: absolute; width: 100px; height: 70px; right: 5px;
+}
 .brand-title{
-    color: white; position: absolute; left: 80px; top: 2px;
-    font-size:xx-large; font-family: URW Chancery L, cursive; 
-  }
-.search{
-    width: 40px; height: 35px; float: right;
-    margin-right: 20px; margin-top: 5px;
-  }
-.toggle-button {
-    position: absolute;
-    top: 12px;
-    margin-left: 2%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 35px;
-    height: 25px;
-    cursor: pointer;
-  }
+  position: absolute; color: white; left: 90px; top: -15px; font-size: xx-large;
+  font-family:'Courier New', Courier, monospace;
+}
 .toggle-button .bar {
-    height: 4px;
-    width: 100%;
-    background-color: white;
-    border-radius: 10px;
-  }
-.menu{
-    list-style: none; width: 28%; height: 100vh; border: solid 1px;
-    margin-top: 51px; background-color: rgb(70, 67, 67); margin-left: 0;
-    margin-right: 0; overflow-y: scroll; padding-left: 0; 
-  }
+  height: 4px;
+  width: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+.toggle-button {
+  position: absolute; 
+  margin-top: 20px;
+  margin-left: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 35px;
+  height: 25px;
+  cursor: pointer;
+}
+
+#menu{
+  width: 25%; height: 100vh; border: solid 1px; 
+  top: 71px; background-color: rgb(57, 62, 63);
+  margin: 0; overflow-y: scroll; padding: 5px;  position: fixed; border: none;
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+
 ul li {
-    list-style: none; border: 1px solid rgb(90, 87, 87); height: max-content; 
-    text-indent: -5px; padding-left: 5px;
-  }
+  list-style: none; height: max-content; background-color: rgb(242, 247, 248); border-radius: 10px; margin-top: 3px;
+  margin-left: 0; padding-left: 10px;
+}
 ul li:hover{
-    background-color: green; 
-  }
+  background-color: rgb(176, 179, 179); 
+}
 ul li a {
-    text-decoration: none; line-height: 25px; color: whitesmoke; 
-    margin-left: 5px; 
-  }
-#check:checked ~ .menu{
-    display: none;
-  }
+  text-decoration: none; line-height: 25px; color: black; 
+  padding: 3px; 
+}
+ul input {
+  width: 96%; height: max-content; background-color: white; border-radius: 10px; margin: 0;
+  padding-left: 10px; padding-top: 4px; font-size: large; border: none;
+}
+#check:checked ~ #menu{
+  display: none;
+}
+.body-content{
+  top: 71px; margin-left: 26%; padding: 0; text-align: justify; position: relative;
+   width: 73%; background-color: white; line-height: 2rem; 
+}
 
 .main{
-    position: relative; width: 66%; margin-left: 30%; margin-top: 60px;
+    position: relative; padding: 1%; padding-top: 0; margin: 0px;
 }
 #main_title{
-    position: absolute; padding: 0px; margin-top: 0px; 
+    margin-top: 0px; 
+}
+.input_result{
+  position: relative; display: flex; flex-direction: row; margin: 0; padding: 0;
 }
 #choose_file{
-    position: absolute; margin-left: 50px; margin-top: 70px;
+    margin: 0px; padding: 0px;
 }
 #lifetime{
-    position: absolute; margin-top: 70px; margin-left: 300px; 
+    margin: 0px; padding: 0px; 
 }
 #lifetime_result{
-    border: solid 1px rgb(221, 88, 88); position: absolute; margin-top: 70px; margin-left: 450px;
-    height: 20px; width: 100px; border-radius: 5px; padding: 2px;
+    border: solid 1px rgb(221, 88, 88); margin: 0px; margin-left: 5%;
+    height: 20px; width: 100px; border-radius: 5px; padding: 5px; 
+}
+.canvas_textarea{
+  display: flex; flex-direction: row; position: relative; width: 100%; padding: 1%; margin: 0;
+  height: 62vh;
 }
 #forcanvas{
-    display: block; width: 500px; height: 400px; position: absolute; margin-top: 100px; margin-left: 0px;
+    display: block; position: relative; width: 70%; height: 62vh; margin: 0px;
     border: solid 1px rgb(92, 38, 38);
 }
+#fortextarea{
+  display: block; width: 25%; height: 62vh; margin: 0px;
+}
 #xcolumn{
-    position: absolute; margin-top: 100px; margin-left: 520px;
-    width: 300px; height: 400px; 
+    margin: 0px; width: 100%; height: 100%; margin-left: 3%;
 }
-#theUse{
-    position: absolute; margin-top: 530px;
-}
-#useContent{
-    position: absolute; margin-top: 560px; text-align: justify;
-    line-height: 25px;
-}
-#work{
-    position: absolute; margin-top: 695px; 
-}
-#workContent1{
-    position: absolute; margin-top: 725px; 
-    line-height: 25px;
-}
-#equation{
-    position: absolute; margin-top: 760px; 
-}
-#workContent2{
-    position: absolute; margin-top: 860px; 
-    line-height: 25px;
-}
-#feedback{
-    position: absolute; margin-top: 910px; 
-}
-#feedbackContent{
-    position: absolute; margin-top: 940px; 
-    line-height: 25px;
-}
-
 
 .bottom-bar{
-    display: flex; width:100%; height: 10em; background-color: black;
-    color:white; justify-content: center; flex-direction: row; float: right;
-    position: relative; z-index: 2; margin-top: 1500px; 
+  width:100%; height: 10rem; background-color: black; display: flex; flex-direction: row;
+  color: white; font-family: 'Arial Narrow', Arial, sans-serif;
 }
-.contact-us{
-    color:white; width: 300px; margin: 10px;
-    padding: 10px; text-align: center;
+.section1{
+  width: 50%; padding: 2%; text-align: center; 
 }
-.contact-us a img{
-    width: 40px; height: 40px; margin: 5px; margin-top: 10px;
+.section2{
+  width: 50%; padding: 2%; text-align: center; 
+}
+.section2 a{
+  text-decoration: none; color: white; border: 1px solid rgb(27, 27, 27); background-color: rgb(27, 27, 27);
+  padding: 1%; border-radius: 5px;
+}
+.section2 a:hover{
+  background-color: rgb(53, 52, 52);
+}
+.contact_us_icon{
+  position: absolute; height: 2rem; margin-left: 1%;
+}
+
+@media (max-width: 1200px){
+  #menu{
+    display: none;
+  }
+  #check:checked ~ #menu{
+    display: block;
+  }
+  .body-content {
+    width: 100%;
+    margin-left: 0%;
+  }
 }

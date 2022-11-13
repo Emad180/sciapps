@@ -1,1 +1,497 @@
-const _0x5716=['style','split','7DLamvH','40px','File\x20id:','24001EBOEbT','forEach','legendFont','legendFontSize','757860ZuSHyB','input_file','name','Remove\x20CIE\x20coordinate','512260TbQcvx','borderWidth','size','scaleTitleFontSize','option','axis','black','Color','Not\x20applicable','Arial','test','axisColor','Axis\x20title:','calculexy','forCanvas','12px','userFileLoaded','mousePressed','magenta','text','Font\x20size','value','input','CIEimage','width','axisFont','fontSize','Georgia','position','Legends:','Font','length','120px','80px','CIEpoint','axisScaleColor','1811FdUeKg','Width','red','110px','addciepoint','18px','type','height','addbutton','parent','push','682692qJELOq','removeciepoint','CCT','getData','346UxTsim','Save\x20as\x20image','axisTitleColor','addCIEpoint','Walter\x20Turncoat','removeCIEpoint','CIE1976chromaticitydiagram.png','CIELUV\x20chromaticiy\x20diagram\x201976','files/ciexyz31_1.csv','slice','7502Unumsv','green','saveImage','yellow','axisScaleFontSize','splice','legendColor','782722ZokvdT','axisScaleFont','save_image','blue','Times\x20New\x20Roman','58JKaaEC'];const _0x3bdca0=_0x2742;(function(_0x254c30,_0x43ce8b){const _0x468677=_0x2742;while(!![]){try{const _0x2862b2=parseInt(_0x468677(0x120))+-parseInt(_0x468677(0xe6))*-parseInt(_0x468677(0xe9))+parseInt(_0x468677(0x135))+parseInt(_0x468677(0xed))+parseInt(_0x468677(0x115))*parseInt(_0x468677(0x13a))+parseInt(_0x468677(0xf1))+parseInt(_0x468677(0x124))*-parseInt(_0x468677(0x12e));if(_0x2862b2===_0x43ce8b)break;else _0x254c30['push'](_0x254c30['shift']());}catch(_0x5648a4){_0x254c30['push'](_0x254c30['shift']());}}}(_0x5716,0x64cd7));function _0x2742(_0x4fbec8,_0x3405b3){return _0x2742=function(_0x57160d,_0x2742d5){_0x57160d=_0x57160d-0xe6;let _0x531a19=_0x5716[_0x57160d];return _0x531a19;},_0x2742(_0x4fbec8,_0x3405b3);}function preload(){img=loadImage('images/CIE1976gamut.png');}let xyzWavelength=[],xValues=[],yValues=[],zValues=[],z=0x0,wavelengthcol=[],intensitycol=[],wavelength=[],xdata=[],ydata=[],zdata=[],x,y,xcoordinate=[],ycoordinate=[],symbol=['∇','♠','♣','+','±','x','o','♥','♦','•','#','&'],symbolpoint=[],namesArray=[],inputx,inputy,inputcct,input_file_id,file_name,filename1,canvas;function setup(){const _0x3744e1=_0x2742;canvas=createCanvas(windowWidth*0x46/0x64,0x226),canvas[_0x3744e1(0x11e)](_0x3744e1(0xff)),ciegraph=new CIEGraph(),ciefileReader=new CIEFileReader(),ciefileReader[_0x3744e1(0x123)]();}function draw(){const _0x35ba0d=_0x2742;background(0x100),ciegraph[_0x35ba0d(0x108)](),ciegraph[_0x35ba0d(0xf6)](),ciefileReader[_0x35ba0d(0x104)](),ciefileReader['CIEpoint']();}function realTimeChanger(){}class CIEGraph{constructor(){const _0x58d3a3=_0x2742;this[_0x58d3a3(0xf2)]=createSelect(),this['borderWidth'][_0x58d3a3(0x10d)](0x20d,0x8e),this[_0x58d3a3(0xf2)][_0x58d3a3(0x11e)](_0x58d3a3(0xff)),this['borderWidth'][_0x58d3a3(0x13b)](_0x58d3a3(0x10b),_0x58d3a3(0x100)),this['borderWidth'][_0x58d3a3(0x13b)]('width',_0x58d3a3(0x112)),this[_0x58d3a3(0xf2)][_0x58d3a3(0x13b)](_0x58d3a3(0x11c),_0x58d3a3(0x11a)),this[_0x58d3a3(0xf2)][_0x58d3a3(0xf5)](0x1,'1'),this[_0x58d3a3(0xf2)]['option'](0x2,'2'),this[_0x58d3a3(0xf2)][_0x58d3a3(0xf5)](0x3,'3'),this['borderWidth'][_0x58d3a3(0xf5)](0x4,'4'),this[_0x58d3a3(0xf2)]['option'](0x5,'5'),this[_0x58d3a3(0xf2)][_0x58d3a3(0x107)](realTimeChanger),this[_0x58d3a3(0x132)]=createSelect(),this[_0x58d3a3(0x132)][_0x58d3a3(0x10d)](0x226,0xf7),this[_0x58d3a3(0x132)][_0x58d3a3(0x11e)](_0x58d3a3(0xff)),this[_0x58d3a3(0x132)][_0x58d3a3(0x13b)]('fontSize',_0x58d3a3(0x100)),this['axisScaleFontSize'][_0x58d3a3(0x13b)](_0x58d3a3(0x109),_0x58d3a3(0xe7)),this[_0x58d3a3(0x132)][_0x58d3a3(0x13b)](_0x58d3a3(0x11c),_0x58d3a3(0x11a)),this[_0x58d3a3(0x132)][_0x58d3a3(0xf5)](0xa,'10'),this[_0x58d3a3(0x132)][_0x58d3a3(0xf5)](0xc,'12'),this[_0x58d3a3(0x132)][_0x58d3a3(0xf5)](0xe,'14'),this[_0x58d3a3(0x132)][_0x58d3a3(0xf5)](0x10,'16'),this['axisScaleFontSize'][_0x58d3a3(0xf5)](0x12,'18'),this[_0x58d3a3(0x132)][_0x58d3a3(0x107)](realTimeChanger),this['axisScaleFont']=createSelect(),this['axisScaleFont']['position'](0x280,0xb6),this[_0x58d3a3(0x136)][_0x58d3a3(0x11e)](_0x58d3a3(0xff)),this[_0x58d3a3(0x136)][_0x58d3a3(0x13b)](_0x58d3a3(0x10b),_0x58d3a3(0x100)),this[_0x58d3a3(0x136)][_0x58d3a3(0x13b)](_0x58d3a3(0x109),_0x58d3a3(0x111)),this[_0x58d3a3(0x136)]['style'](_0x58d3a3(0x11c),_0x58d3a3(0x11a)),this['axisScaleFont'][_0x58d3a3(0xf5)](_0x58d3a3(0x10c)),this[_0x58d3a3(0x136)]['option'](_0x58d3a3(0xfa)),this[_0x58d3a3(0x136)][_0x58d3a3(0xf5)](_0x58d3a3(0x128)),this[_0x58d3a3(0x136)][_0x58d3a3(0xf5)](_0x58d3a3(0x139)),this[_0x58d3a3(0x136)][_0x58d3a3(0x107)](realTimeChanger),this[_0x58d3a3(0x10a)]=createSelect(),this[_0x58d3a3(0x10a)][_0x58d3a3(0x10d)](0x280,0xf6),this[_0x58d3a3(0x10a)][_0x58d3a3(0x11e)](_0x58d3a3(0xff)),this[_0x58d3a3(0x10a)]['style'](_0x58d3a3(0x10b),_0x58d3a3(0x100)),this['axisFont']['style']('width',_0x58d3a3(0x111)),this['axisFont'][_0x58d3a3(0x13b)](_0x58d3a3(0x11c),'18px'),this[_0x58d3a3(0x10a)]['option'](_0x58d3a3(0x10c)),this[_0x58d3a3(0x10a)][_0x58d3a3(0xf5)](_0x58d3a3(0xfa)),this[_0x58d3a3(0x10a)][_0x58d3a3(0xf5)](_0x58d3a3(0x128)),this['axisFont'][_0x58d3a3(0xf5)](_0x58d3a3(0x139)),this[_0x58d3a3(0x10a)][_0x58d3a3(0x107)](realTimeChanger),this[_0x58d3a3(0xfc)]=createSelect(),this[_0x58d3a3(0xfc)]['position'](0x28a,0x8c),this[_0x58d3a3(0xfc)][_0x58d3a3(0x11e)]('forCanvas'),this['axisColor'][_0x58d3a3(0x13b)]('fontSize','12px'),this[_0x58d3a3(0xfc)][_0x58d3a3(0x13b)](_0x58d3a3(0x109),_0x58d3a3(0x118)),this[_0x58d3a3(0xfc)]['style'](_0x58d3a3(0x11c),_0x58d3a3(0x11a)),this[_0x58d3a3(0xfc)][_0x58d3a3(0xf5)](_0x58d3a3(0xf7)),this[_0x58d3a3(0xfc)]['option'](_0x58d3a3(0x117)),this[_0x58d3a3(0xfc)][_0x58d3a3(0xf5)](_0x58d3a3(0x12f)),this[_0x58d3a3(0xfc)][_0x58d3a3(0xf5)](_0x58d3a3(0x103)),this['axisColor']['option'](_0x58d3a3(0x131)),this[_0x58d3a3(0xfc)][_0x58d3a3(0xf5)]('blue'),this[_0x58d3a3(0xfc)]['input'](realTimeChanger),this[_0x58d3a3(0x126)]=createSelect(),this['axisTitleColor']['position'](0x20f,0xcc),this[_0x58d3a3(0x126)][_0x58d3a3(0x11e)](_0x58d3a3(0xff)),this[_0x58d3a3(0x126)][_0x58d3a3(0x13b)](_0x58d3a3(0x10b),_0x58d3a3(0x100)),this[_0x58d3a3(0x126)][_0x58d3a3(0x13b)]('width',_0x58d3a3(0x118)),this[_0x58d3a3(0x126)][_0x58d3a3(0x13b)](_0x58d3a3(0x11c),_0x58d3a3(0x11a)),this[_0x58d3a3(0x126)][_0x58d3a3(0xf5)](_0x58d3a3(0xf7)),this[_0x58d3a3(0x126)]['option'](_0x58d3a3(0x117)),this['axisTitleColor'][_0x58d3a3(0xf5)](_0x58d3a3(0x12f)),this[_0x58d3a3(0x126)]['option'](_0x58d3a3(0x103)),this[_0x58d3a3(0x126)][_0x58d3a3(0xf5)](_0x58d3a3(0x131)),this[_0x58d3a3(0x126)][_0x58d3a3(0xf5)](_0x58d3a3(0x138)),this[_0x58d3a3(0x126)][_0x58d3a3(0x107)](realTimeChanger),this[_0x58d3a3(0x114)]=createSelect(),this[_0x58d3a3(0x114)][_0x58d3a3(0x10d)](0x212,0x10e),this[_0x58d3a3(0x114)]['parent'](_0x58d3a3(0xff)),this[_0x58d3a3(0x114)]['style'](_0x58d3a3(0x10b),_0x58d3a3(0x100)),this['axisScaleColor'][_0x58d3a3(0x13b)](_0x58d3a3(0x109),_0x58d3a3(0x118)),this[_0x58d3a3(0x114)][_0x58d3a3(0x13b)](_0x58d3a3(0x11c),_0x58d3a3(0x11a)),this[_0x58d3a3(0x114)][_0x58d3a3(0xf5)]('black'),this['axisScaleColor'][_0x58d3a3(0xf5)](_0x58d3a3(0x117)),this[_0x58d3a3(0x114)][_0x58d3a3(0xf5)]('green'),this['axisScaleColor']['option'](_0x58d3a3(0x103)),this[_0x58d3a3(0x114)][_0x58d3a3(0xf5)](_0x58d3a3(0x131)),this[_0x58d3a3(0x114)][_0x58d3a3(0xf5)](_0x58d3a3(0x138)),this[_0x58d3a3(0x114)][_0x58d3a3(0x107)](realTimeChanger),this[_0x58d3a3(0xf4)]=createSelect(),this['scaleTitleFontSize'][_0x58d3a3(0x10d)](0x221,0xb6),this[_0x58d3a3(0xf4)][_0x58d3a3(0x11e)](_0x58d3a3(0xff)),this[_0x58d3a3(0xf4)][_0x58d3a3(0x13b)](_0x58d3a3(0x10b),_0x58d3a3(0x100)),this['scaleTitleFontSize'][_0x58d3a3(0x13b)](_0x58d3a3(0x109),'40px'),this[_0x58d3a3(0xf4)]['style'](_0x58d3a3(0x11c),_0x58d3a3(0x11a)),this['scaleTitleFontSize'][_0x58d3a3(0xf5)](0xa,'10'),this[_0x58d3a3(0xf4)][_0x58d3a3(0xf5)](0xc,'12'),this['scaleTitleFontSize']['option'](0xe,'14'),this[_0x58d3a3(0xf4)]['option'](0x10,'16'),this[_0x58d3a3(0xf4)][_0x58d3a3(0xf5)](0x12,'18'),this[_0x58d3a3(0xf4)][_0x58d3a3(0xf5)](0x14,'20'),this[_0x58d3a3(0xf4)][_0x58d3a3(0xf5)](0x16,'22'),this['scaleTitleFontSize']['input'](realTimeChanger);}[_0x3bdca0(0xf6)](){const _0x641615=_0x3bdca0;textAlign(CENTER),strokeWeight(0x1),line(0x1de,0x0,0x1de,0x226),line(0x2fa,0x0,0x2fa,0x226),line(0x0,0x226,0x2f8,0x226),line(0x1e0,0x78,0x2f8,0x78),line(0x1e0,0xa2,0x2f8,0xa2),line(0x1e0,0xe1,0x2f8,0xe1),line(0x1e0,0x122,0x2f8,0x122),push(),translate(0x64,0x1ce),stroke(this[_0x641615(0xfc)][_0x641615(0x106)]()),strokeWeight(this['borderWidth']['value']()),line(0x0,0x0,0x150,0x0),line(0x0,0x0,0x0,-0x17a),line(0x0,-0x17a,0x150,-0x17a),line(0x150,0x0,0x150,-0x17a),strokeWeight(this[_0x641615(0xf2)][_0x641615(0x106)]());for(let _0x2cbe27=0x0;_0x2cbe27<=0x150;_0x2cbe27=_0x2cbe27+0x30){line(_0x2cbe27,0x0,_0x2cbe27,0x8);}for(let _0xc2a729=0x0;_0xc2a729<=0x17a;_0xc2a729=_0xc2a729+0x36){line(0x0,-_0xc2a729,-0x8,-_0xc2a729);}strokeWeight(Number(this[_0x641615(0x132)]['value']())/0xf),textSize(Number(this[_0x641615(0x132)][_0x641615(0x106)]())),fill(this[_0x641615(0x114)][_0x641615(0x106)]()),stroke(this[_0x641615(0x114)][_0x641615(0x106)]()),textFont(''+this[_0x641615(0x10a)][_0x641615(0x106)]());for(let _0x260ded=0x0;_0x260ded<=0x150;_0x260ded=_0x260ded+0x30){text(''+round(0.1*(_0x260ded/0x30),0x1),_0x260ded,0x19);}for(let _0x159dd2=0x0;_0x159dd2<=0x17a;_0x159dd2=_0x159dd2+0x36){text(''+round(0.1*(_0x159dd2/0x36),0x1),-0x19,-_0x159dd2);}strokeWeight(0.5),noFill(),beginShape();for(let _0x39bf1c=0x0;_0x39bf1c<xdata[_0x641615(0x110)];_0x39bf1c++){vertex(0x4*xdata[_0x39bf1c]/(xdata[_0x39bf1c]+0xf*ydata[_0x39bf1c]+0x3*zdata[_0x39bf1c])*0x1e0,0x9*ydata[_0x39bf1c]/(xdata[_0x39bf1c]+0xf*ydata[_0x39bf1c]+0x3*zdata[_0x39bf1c])*-0x21e);}endShape(CLOSE),pop(),push(),fill(this[_0x641615(0x126)][_0x641615(0x106)]()),textFont(''+this[_0x641615(0x136)]['value']()),textSize(Number(this['scaleTitleFontSize'][_0x641615(0x106)]())),text('u\x27',0x10e,0x1f9),text('v\x27',0x37,0x118),pop(),fill(_0x641615(0xf7)),textSize(0xc),textStyle(BOLD),text('Border:',0x1fe,0x87),text('Axis:',0x1f9,0xf3),text(_0x641615(0xfd),0x203,0xb2),text(_0x641615(0x10e),0x203,0x136),textStyle(ITALIC),textSize(0xc),textFont(_0x641615(0xfa)),text(_0x641615(0xf8),0x276,0x9b),text(_0x641615(0xf8),0x1f9,0xd9),text(_0x641615(0xf8),0x1f9,0x11d),text(_0x641615(0xf8),0x1f9,0x163),text(_0x641615(0x116),0x1f9,0x9b),text(_0x641615(0x10f),0x26c,0xc3),text(_0x641615(0x10f),0x26c,0x104),text(_0x641615(0x10f),0x26c,0x14a),text(_0x641615(0x105),0x203,0xc3),text(_0x641615(0x105),0x203,0x104),text('Font\x20size',0x203,0x14a),text(_0x641615(0xe8),0x1fe,0x55),textSize(0x1c),textStyle(NORMAL),textFont(_0x641615(0x128)),text(_0x641615(0x12b),0xfa,0x32);}[_0x3bdca0(0x108)](){image(img,0x55,0x78,0x13f,0x167);}}class CIEFileReader{constructor(){const _0x29340c=_0x3bdca0;this[_0x29340c(0xee)]=createFileInput(this[_0x29340c(0x101)]),this[_0x29340c(0xee)]['position'](0x1ea,0x14),this[_0x29340c(0xee)][_0x29340c(0x11e)](_0x29340c(0xff)),this['addbutton']=createButton('Calculate'),this[_0x29340c(0x11d)][_0x29340c(0x10d)](0x2af,0x14),this['addbutton'][_0x29340c(0x11e)](_0x29340c(0xff)),this['addbutton'][_0x29340c(0x102)](this[_0x29340c(0xfe)]),this[_0x29340c(0x119)]=createButton('add\x20CIE\x20coordinate'),this[_0x29340c(0x119)][_0x29340c(0x10d)](0x276,0x46),this[_0x29340c(0x119)][_0x29340c(0x11e)](_0x29340c(0xff)),this[_0x29340c(0x119)][_0x29340c(0x102)](this[_0x29340c(0x127)]),this[_0x29340c(0x121)]=createButton(_0x29340c(0xf0)),this[_0x29340c(0x121)][_0x29340c(0x10d)](0x1ea,0x5f),this[_0x29340c(0x121)][_0x29340c(0x11e)]('forCanvas'),this[_0x29340c(0x121)][_0x29340c(0x102)](this[_0x29340c(0x129)]),this[_0x29340c(0x137)]=createButton(_0x29340c(0x125)),this[_0x29340c(0x137)][_0x29340c(0x10d)](0x290,0x5f),this[_0x29340c(0x137)][_0x29340c(0x11e)]('forCanvas'),this[_0x29340c(0x137)]['mousePressed'](this[_0x29340c(0x130)]),inputx=createInput(),inputx['position'](0x1f9,0x2d),inputx['size'](0x28),inputx['parent'](_0x29340c(0xff)),inputy=createInput(),inputy[_0x29340c(0x10d)](0x24e,0x2d),inputy[_0x29340c(0xf3)](0x28),inputy[_0x29340c(0x11e)](_0x29340c(0xff)),inputcct=createInput(),inputcct[_0x29340c(0x10d)](0x2a8,0x2d),inputcct[_0x29340c(0xf3)](0x48),inputcct[_0x29340c(0x11e)](_0x29340c(0xff)),input_file_id=createInput(),input_file_id[_0x29340c(0x10d)](0x212,0x46),input_file_id['size'](0x50),input_file_id[_0x29340c(0x11e)](_0x29340c(0xff)),this[_0x29340c(0xec)]=createSelect(),this[_0x29340c(0xec)]['position'](0x226,0x13d),this[_0x29340c(0xec)][_0x29340c(0x11e)](_0x29340c(0xff)),this[_0x29340c(0xec)][_0x29340c(0x13b)](_0x29340c(0x10b),_0x29340c(0x100)),this['legendFontSize'][_0x29340c(0x13b)](_0x29340c(0x109),_0x29340c(0xe7)),this[_0x29340c(0xec)][_0x29340c(0x13b)](_0x29340c(0x11c),_0x29340c(0x11a)),this[_0x29340c(0xec)][_0x29340c(0xf5)](0xa,'10'),this[_0x29340c(0xec)][_0x29340c(0xf5)](0xc,'12'),this[_0x29340c(0xec)][_0x29340c(0xf5)](0xe,'14'),this[_0x29340c(0xec)]['option'](0x10,'16'),this[_0x29340c(0xec)][_0x29340c(0xf5)](0x12,'18'),this[_0x29340c(0xec)][_0x29340c(0x107)](realTimeChanger),this[_0x29340c(0xeb)]=createSelect(),this[_0x29340c(0xeb)][_0x29340c(0x10d)](0x280,0x13d),this[_0x29340c(0xeb)][_0x29340c(0x11e)](_0x29340c(0xff)),this[_0x29340c(0xeb)][_0x29340c(0x13b)](_0x29340c(0x10b),_0x29340c(0x100)),this[_0x29340c(0xeb)][_0x29340c(0x13b)]('width',_0x29340c(0x111)),this[_0x29340c(0xeb)][_0x29340c(0x13b)](_0x29340c(0x11c),_0x29340c(0x11a)),this[_0x29340c(0xeb)][_0x29340c(0xf5)](_0x29340c(0x10c)),this[_0x29340c(0xeb)]['option']('Arial'),this[_0x29340c(0xeb)]['option'](_0x29340c(0x128)),this[_0x29340c(0xeb)][_0x29340c(0xf5)]('Times\x20New\x20Roman'),this[_0x29340c(0xeb)]['input'](realTimeChanger),this[_0x29340c(0x134)]=createSelect(),this['legendColor'][_0x29340c(0x10d)](0x20f,0x156),this[_0x29340c(0x134)][_0x29340c(0x11e)](_0x29340c(0xff)),this[_0x29340c(0x134)]['style'](_0x29340c(0x10b),_0x29340c(0x100)),this[_0x29340c(0x134)][_0x29340c(0x13b)](_0x29340c(0x109),'110px'),this[_0x29340c(0x134)][_0x29340c(0x13b)]('height',_0x29340c(0x11a)),this[_0x29340c(0x134)][_0x29340c(0xf5)](_0x29340c(0xf7)),this[_0x29340c(0x134)][_0x29340c(0xf5)](_0x29340c(0x117)),this[_0x29340c(0x134)][_0x29340c(0xf5)]('green'),this['legendColor'][_0x29340c(0xf5)](_0x29340c(0x103)),this['legendColor'][_0x29340c(0xf5)](_0x29340c(0x131)),this['legendColor'][_0x29340c(0xf5)](_0x29340c(0x138)),this[_0x29340c(0x134)][_0x29340c(0x107)](realTimeChanger);}async['getData'](){const _0x146689=_0x3bdca0,_0x500893=await fetch(_0x146689(0x12c)),_0xb1c985=await _0x500893[_0x146689(0x104)](),_0x21181e=_0xb1c985[_0x146689(0x13c)]('\x0a')[_0x146689(0x12d)]();_0x21181e[_0x146689(0xea)](_0x218ada=>{const _0x58dee7=_0x146689,_0x56b068=_0x218ada[_0x58dee7(0x13c)](',');wavelength['push'](float(_0x56b068[0x0])),xdata[_0x58dee7(0x11f)](float(_0x56b068[0x1])),ydata[_0x58dee7(0x11f)](float(_0x56b068[0x2])),zdata[_0x58dee7(0x11f)](float(_0x56b068[0x3]));});}[_0x3bdca0(0x104)](){const _0x44d568=_0x3bdca0;textSize(0x10),text('u\x27',0x1ef,0x3c),text('v\x27',0x244,0x3c),text(_0x44d568(0x122),0x294,0x3c);}['userFileLoaded'](_0x4a5413){const _0x4c410c=_0x3bdca0;wavelengthcol=[],intensitycol=[];if(_0x4a5413[_0x4c410c(0x11b)]==='text'){let _0x479ffd=_0x4a5413['data'][_0x4c410c(0x13c)]('\x0a');_0x479ffd[_0x4c410c(0xea)](_0x46c11c=>{const _0x5c8fb1=_0x4c410c;let _0x26837a=/^[0-9,\s|.]/,_0x5a89c3=_0x26837a[_0x5c8fb1(0xfb)](_0x46c11c);if(_0x5a89c3){let _0x3a9c74=_0x46c11c['replace']('\x09',','),_0x3233bf=_0x3a9c74[_0x5c8fb1(0x13c)](',');wavelengthcol[_0x5c8fb1(0x11f)](_0x3233bf[0x0]),intensitycol['push'](_0x3233bf[0x1]);}else{}}),print(wavelengthcol,intensitycol);}else alert('load\x20txt\x20file\x20format\x20please');file_name=str(_0x4a5413[_0x4c410c(0xef)]),filename1=file_name['split']('.');}[_0x3bdca0(0xfe)](){const _0x52557b=_0x3bdca0;xyzWavelength=[],xValues=[],yValues=[],zValues=[];for(let _0x4dcd64=0x0;_0x4dcd64<=wavelength[_0x52557b(0x110)];_0x4dcd64++){for(let _0x3b891c=0x0;_0x3b891c<=wavelengthcol[_0x52557b(0x110)];_0x3b891c++){let _0x23653e=wavelength[_0x4dcd64],_0x54003e=round(float(wavelengthcol[_0x3b891c]));if(_0x23653e===_0x54003e)xyzWavelength[_0x52557b(0x11f)](_0x54003e),xValues[_0x52557b(0x11f)](float(intensitycol[_0x3b891c])*xdata[_0x4dcd64]),yValues[_0x52557b(0x11f)](float(intensitycol[_0x3b891c])*ydata[_0x4dcd64]),zValues['push'](float(intensitycol[_0x3b891c])*zdata[_0x4dcd64]);else{}}}let _0x2a8b52=0x0,_0x53b896=0x0,_0x453c76=0x0;for(let _0x49f66a=0x0;_0x49f66a<xyzWavelength[_0x52557b(0x110)];_0x49f66a++){_0x2a8b52+=xValues[_0x49f66a],_0x53b896+=yValues[_0x49f66a],_0x453c76+=zValues[_0x49f66a];}x=0x4*_0x2a8b52/(_0x2a8b52+0xf*_0x53b896+0x3*_0x453c76),y=0x9*_0x53b896/(_0x2a8b52+0xf*_0x53b896+0x3*_0x453c76),print(x,y);let _0xf338f4,_0x3069e9;_0xf338f4=(x-0.332)/(0.1858-y),_0x3069e9=0x1b5*pow(_0xf338f4,0x3)+0xe11*pow(_0xf338f4,0x2)+0x1acd*_0xf338f4+0x158d,inputx[_0x52557b(0x106)](round(x,0x3)),inputy[_0x52557b(0x106)](round(y,0x3)),inputcct['value'](_0x52557b(0xf9)),input_file_id[_0x52557b(0x106)](filename1[0x0]);}['addCIEpoint'](){const _0x250734=_0x3bdca0;let _0x51d26c=inputx[_0x250734(0x106)](),_0x3489ac=inputy[_0x250734(0x106)](),_0x3fae1a=input_file_id['value']();xcoordinate[_0x250734(0x11f)](round(_0x51d26c,0x3)),ycoordinate[_0x250734(0x11f)](round(_0x3489ac,0x3)),symbolpoint['push'](symbol[z]),namesArray[_0x250734(0x11f)](_0x3fae1a),z++,print(x,y,xcoordinate);}[_0x3bdca0(0x113)](){const _0x239492=_0x3bdca0;push(),fill(this[_0x239492(0x134)]['value']()),textFont(this[_0x239492(0xeb)]['value']()),textSize(Number(this[_0x239492(0xec)][_0x239492(0x106)]())),textAlign(LEFT),textStyle(NORMAL);for(let _0xb91f7a=0x0;_0xb91f7a<=xcoordinate[_0x239492(0x110)]-0x1;_0xb91f7a++){push(),translate(0x64,0x1ce),text(''+symbolpoint[_0xb91f7a],float(xcoordinate[_0xb91f7a])*0x1e0-Number(this[_0x239492(0xec)][_0x239492(0x106)]())/3.5,float(ycoordinate[_0xb91f7a]*-0x220)+Number(this['legendFontSize'][_0x239492(0x106)]())/3.5),pop(),push(),translate(0x0,0x64),text(symbolpoint[_0xb91f7a]+'\x20'+namesArray[_0xb91f7a],0x12c,_0xb91f7a*0x14),pop();}pop();}['removeCIEpoint'](){const _0x164126=_0x3bdca0;xcoordinate[_0x164126(0x133)](-0x1,0x1),ycoordinate[_0x164126(0x133)](-0x1,0x1),symbolpoint[_0x164126(0x133)](-0x1,0x1),namesArray['splice'](-0x1,0x1);}[_0x3bdca0(0x130)](){const _0x45feb8=_0x3bdca0;var _0x86636d=get(0x14,0x14,0x1c2,0x1fe);save(_0x86636d,_0x45feb8(0x12a));}}
+function preload(){
+    img = loadImage('images/CIE1976gamut.png');
+}
+
+// global variable for the calculatexyz method in CIEFileReader class 
+let xyzWavelength = [];
+let xValues = [];
+let yValues = [];
+let zValues = [];
+
+let z = 0;
+
+// global variable for userLoadedFile method in CIEFileReader class 
+let wavelengthcol = [];
+let intensitycol = [];
+
+// global variable for getData method in CIEFileReader class 
+let wavelength = [];
+let xdata = [];
+let ydata = [];
+let zdata = [];
+
+//CIE chromaticity coordinates x, y
+let x, y;
+
+// x and y coordinate poits
+let xcoordinate = [];
+let ycoordinate = [];
+
+//symbol array
+let symbol = ['\u2660', '\u2207', '\u2663', '+', '±', 'x', 'o', '\u2665', '\u2666', '\u2022', '#', '&'];
+let symbolpoint = [];
+let namesArray = [];
+
+let inputx, inputy, inputcct, input_file_id;
+
+let file_name, filename1;
+
+let canvas
+
+function setup(){
+    canvas = createCanvas(windowWidth*70/100, 550);
+    canvas.parent("forCanvas");
+    ciegraph = new CIEGraph();
+    ciefileReader = new CIEFileReader();
+    ciefileReader.getData();
+}
+
+function draw(){
+    background(256);
+    ciegraph.CIEimage();
+    ciegraph.axis();
+    ciefileReader.text();
+    ciefileReader.CIEpoint();
+}
+
+function realTimeChanger(){
+    //nothing here but it works
+}
+
+class CIEGraph{
+    constructor(){
+
+        this.borderWidth = createSelect();
+        this.borderWidth.position(525, 142);
+        this.borderWidth.parent("forCanvas");
+        this.borderWidth.style('fontSize', '12px');
+        this.borderWidth.style('width', '80px');
+        this.borderWidth.style('height', '18px');
+        this.borderWidth.option(1, '1'); 
+        this.borderWidth.option(2, '2');
+        this.borderWidth.option(3, '3');
+        this.borderWidth.option(4, '4');
+        this.borderWidth.option(5, '5');
+        this.borderWidth.input(realTimeChanger);
+
+        this.axisScaleFontSize = createSelect();
+        this.axisScaleFontSize.position(550, 247);
+        this.axisScaleFontSize.parent("forCanvas");
+        this.axisScaleFontSize.style('fontSize', '12px');
+        this.axisScaleFontSize.style('width', '40px');
+        this.axisScaleFontSize.style('height', '18px');
+        this.axisScaleFontSize.option(10, '10'); 
+        this.axisScaleFontSize.option(12, '12');
+        this.axisScaleFontSize.option(14, '14');
+        this.axisScaleFontSize.option(16, '16');
+        this.axisScaleFontSize.option(18, '18');
+        this.axisScaleFontSize.input(realTimeChanger);
+
+        this.axisScaleFont = createSelect();
+        this.axisScaleFont.position(640, 182);
+        this.axisScaleFont.parent("forCanvas");
+        this.axisScaleFont.style('fontSize', '12px');
+        this.axisScaleFont.style('width', '120px');
+        this.axisScaleFont.style('height', '18px');
+        this.axisScaleFont.option("Georgia"); 
+        this.axisScaleFont.option("Arial");
+        this.axisScaleFont.option("Walter Turncoat");
+        this.axisScaleFont.option("Times New Roman");
+        this.axisScaleFont.input(realTimeChanger);
+
+        this.axisFont = createSelect();
+        this.axisFont.position(640, 246);
+        this.axisFont.parent("forCanvas");
+        this.axisFont.style('fontSize', '12px');
+        this.axisFont.style('width', '120px');
+        this.axisFont.style('height', '18px');
+        this.axisFont.option("Georgia"); 
+        this.axisFont.option("Arial");
+        this.axisFont.option("Walter Turncoat");
+        this.axisFont.option("Times New Roman");
+        this.axisFont.input(realTimeChanger);
+
+        this.axisColor = createSelect();
+        this.axisColor.position(650, 140);
+        this.axisColor.parent("forCanvas");
+        this.axisColor.style('fontSize', '12px');
+        this.axisColor.style('width', '110px');
+        this.axisColor.style('height', '18px');
+        this.axisColor.option("black"); 
+        this.axisColor.option("red");
+        this.axisColor.option("green");
+        this.axisColor.option("magenta");
+        this.axisColor.option("yellow");
+        this.axisColor.option("blue");
+        this.axisColor.input(realTimeChanger); 
+
+        this.axisTitleColor = createSelect();
+        this.axisTitleColor.position(527, 204);
+        this.axisTitleColor.parent("forCanvas");
+        this.axisTitleColor.style('fontSize', '12px');
+        this.axisTitleColor.style('width', '110px');
+        this.axisTitleColor.style('height', '18px');
+        this.axisTitleColor.option("black"); 
+        this.axisTitleColor.option("red");
+        this.axisTitleColor.option("green");
+        this.axisTitleColor.option("magenta");
+        this.axisTitleColor.option("yellow");
+        this.axisTitleColor.option("blue");
+        this.axisTitleColor.input(realTimeChanger);
+
+        this.axisScaleColor = createSelect();
+        this.axisScaleColor.position(530, 270);
+        this.axisScaleColor.parent("forCanvas");
+        this.axisScaleColor.style('fontSize', '12px');
+        this.axisScaleColor.style('width', '110px');
+        this.axisScaleColor.style('height', '18px');
+        this.axisScaleColor.option("black"); 
+        this.axisScaleColor.option("red");
+        this.axisScaleColor.option("green");
+        this.axisScaleColor.option("magenta");
+        this.axisScaleColor.option("yellow");
+        this.axisScaleColor.option("blue");
+        this.axisScaleColor.input(realTimeChanger);
+
+        this.scaleTitleFontSize = createSelect();
+        this.scaleTitleFontSize.position(545, 182);
+        this.scaleTitleFontSize.parent("forCanvas");
+        this.scaleTitleFontSize.style('fontSize', '12px');
+        this.scaleTitleFontSize.style('width', '40px');
+        this.scaleTitleFontSize.style('height', '18px');
+        this.scaleTitleFontSize.option(10, '10'); 
+        this.scaleTitleFontSize.option(12, '12');
+        this.scaleTitleFontSize.option(14, '14');
+        this.scaleTitleFontSize.option(16, '16');
+        this.scaleTitleFontSize.option(18, '18');
+        this.scaleTitleFontSize.option(20, '20');
+        this.scaleTitleFontSize.option(22, '22');
+        this.scaleTitleFontSize.input(realTimeChanger);
+
+    }
+    axis(){
+        textAlign(CENTER);
+        strokeWeight(1)
+        line(478, 0, 478, 550);
+        line(762, 0, 762, 550);
+        line(0, 550, 760, 550);
+        line(480, 120, 760, 120);
+        line(480, 162, 760, 162);
+        line(480, 225, 760, 225);
+        line(480, 290, 760, 290);
+
+        push();
+        translate(100, 462);
+        stroke(this.axisColor.value());
+        strokeWeight(this.borderWidth.value());
+        line(0, 0, 336, 0);
+        line(0, 0, 0, -378);
+        line(0, -378, 336, -378);
+        line(336, 0, 336, -378);
+        
+        strokeWeight(this.borderWidth.value());
+        for(let i = 0; i <= 336; i = i + 48){
+            line(i, 0, i, 8);
+        }
+
+        for(let i = 0; i <= 378; i = i + 54){
+            line(0, -i, -8, -i);
+        }
+        
+        strokeWeight(Number(this.axisScaleFontSize.value())/15);
+        textSize(Number(this.axisScaleFontSize.value())); 
+        fill(this.axisScaleColor.value());
+        stroke(this.axisScaleColor.value());
+        textFont(`${this.axisFont.value()}`);  
+        for(let q = 0; q <= 336; q = q + 48){
+            text(`${round(0.1*(q/48), 1)}`, q, 25);
+        }
+        for(let q = 0; q <= 378; q = q + 54){
+            text(`${round(0.1*(q/54), 1)}`, -25, -q);
+        }
+     
+        strokeWeight(0.5);
+        noFill();
+        beginShape();
+        for(let l = 0; l < xdata.length; l++){
+            vertex((4*xdata[l]/(xdata[l]+(15*ydata[l])+(3*zdata[l])))*480, (9*ydata[l]/(xdata[l]+(15*ydata[l])+(3*zdata[l])))*(-542));
+        }
+        endShape(CLOSE);
+        pop();
+
+        push();
+        fill(this.axisTitleColor.value());
+        textFont(`${this.axisScaleFont.value()}`);
+        textSize(Number(this.scaleTitleFontSize.value()));
+        text('u\'', 270, 505);
+        text('v\'', 55, 280);
+        pop();
+
+        fill('black');
+        textSize(12);
+        textStyle(BOLD);
+        text('Border:', 510, 135);
+        text('Axis:', 505, 243);
+        text('Axis title:', 515, 178);
+        text('Legends:', 515, 310);
+
+        textStyle(ITALIC);
+        textSize(12);
+        textFont("Arial");
+        text('Color', 630, 155);  // border color
+        text('Color', 505, 217);  // axis title color
+        text('Color', 505, 285);  // for axis
+        text('Color', 505, 355);  // for legends
+        text('Width', 505, 155);
+        text('Font', 620, 195);   // for axis title
+        text('Font', 620, 260);   // for axis
+        text('Font', 620, 330);   // for legends
+        text('Font size', 515, 195);  // axis title
+        text('Font size', 515, 260);  // for axis
+        text('Font size', 515, 330);   // for legends
+        text('File id:', 510, 85);
+
+        textSize(28);
+        textStyle(NORMAL);
+        textFont('Walter Turncoat')
+        text('CIELUV chromaticiy diagram 1976', 250, 50);
+    }
+    CIEimage(){
+        image(img, 85, 120, 319, 359);
+    }
+}
+
+class CIEFileReader{
+    constructor(){
+
+        this.input_file = createFileInput(this.userFileLoaded);
+        this.input_file.position(490, 20);
+        this.input_file.parent("forCanvas");
+
+        this.addbutton = createButton('Calculate');
+        this.addbutton.position(687, 20);
+        this.addbutton.parent("forCanvas");
+        this.addbutton.mousePressed(this.calculexy);
+
+        this.addciepoint = createButton('add CIE coordinate');
+        this.addciepoint.position(630, 70);
+        this.addciepoint.parent("forCanvas");
+        this.addciepoint.mousePressed(this.addCIEpoint);
+
+        this.removeciepoint = createButton('Remove CIE coordinate');
+        this.removeciepoint.position(490, 95);
+        this.removeciepoint.parent("forCanvas");
+        this.removeciepoint.mousePressed(this.removeCIEpoint);  
+
+        this.save_image = createButton('Save as image');
+        this.save_image.position(656, 95);
+        this.save_image.parent("forCanvas");
+        this.save_image.mousePressed(this.saveImage);
+
+        inputx = createInput();
+        inputx.position(505, 45);
+        inputx.size(40);
+        inputx.parent("forCanvas");
+    
+        inputy = createInput();
+        inputy.position(590, 45);
+        inputy.size(40);
+        inputy.parent("forCanvas");
+
+        inputcct = createInput();
+        inputcct.position(680, 45);
+        inputcct.size(72);
+        inputcct.parent("forCanvas");
+
+        input_file_id = createInput();
+        input_file_id.position(530, 70);
+        input_file_id.size(80);
+        input_file_id.parent("forCanvas");
+
+        this.legendFontSize = createSelect();
+        this.legendFontSize.position(550, 317);
+        this.legendFontSize.parent("forCanvas");
+        this.legendFontSize.style('fontSize', '12px');
+        this.legendFontSize.style('width', '40px');
+        this.legendFontSize.style('height', '18px');
+        this.legendFontSize.option(10, '10'); 
+        this.legendFontSize.option(12, '12');
+        this.legendFontSize.option(14, '14');
+        this.legendFontSize.option(16, '16');
+        this.legendFontSize.option(18, '18');
+        this.legendFontSize.input(realTimeChanger);
+
+        this.legendFont = createSelect();
+        this.legendFont.position(640, 317);
+        this.legendFont.parent("forCanvas");
+        this.legendFont.style('fontSize', '12px');
+        this.legendFont.style('width', '120px');
+        this.legendFont.style('height', '18px');
+        this.legendFont.option("Georgia"); 
+        this.legendFont.option("Arial");
+        this.legendFont.option("Walter Turncoat");
+        this.legendFont.option("Times New Roman");
+        this.legendFont.input(realTimeChanger);
+
+        this.legendColor = createSelect();
+        this.legendColor.position(527, 342);
+        this.legendColor.parent("forCanvas");
+        this.legendColor.style('fontSize', '12px');
+        this.legendColor.style('width', '110px');
+        this.legendColor.style('height', '18px');
+        this.legendColor.option("black"); 
+        this.legendColor.option("red");
+        this.legendColor.option("green");
+        this.legendColor.option("magenta");
+        this.legendColor.option("yellow");
+        this.legendColor.option("blue");
+        this.legendColor.input(realTimeChanger);
+
+    }
+    async getData(){
+        const response = await fetch('files/ciexyz31_1.csv');
+        const data = await response.text();
+    
+        const rows = data.split('\n').slice();
+        rows.forEach(element => {
+            const row = element.split(',');
+            wavelength.push(float(row[0]));
+            xdata.push(float(row[1]));
+            ydata.push(float(row[2]));
+            zdata.push(float(row[3]));
+        })
+    }
+
+    text(){
+        textSize(16);
+        text('u\'', 495, 60);
+        text('v\'', 580, 60);
+        text('CCT', 660, 60);
+    }
+
+    userFileLoaded(file){
+        wavelengthcol = [];
+        intensitycol = [];
+
+        let index = file.name.lastIndexOf('.');
+        let fileExt = file.name.substring(index);
+        if(fileExt === '.txt' || fileExt === '.csv' || fileExt === '.uxd' || fileExt === '.xls' || fileExt === '.xlsx'){
+            let fileString = file.data.split(/\r\n|\n/);
+            fileString.forEach(element => {
+                if(/[^0-9,.\s\tEe+-]/g.test(element)){
+                    //pass
+                }else if(element == ''){
+                    //pass;
+                }else{
+                    let rowTrimed = element.replace(/^\s+|\s+$/gm,'');
+                    if(/[,]|\s+/.test(rowTrimed)){
+                        let toArrays = rowTrimed.replace(/[,]|\s+/, '\t');
+                        let row = toArrays.split('\t');
+                        wavelengthcol.push(row[0]);
+                        intensitycol.push(row[1]);
+                    }else{
+                        alert(`the delemiter must be ','/'Tab'`)
+                    }
+                }
+            })
+            print(wavelengthcol, intensitycol);
+        }else{
+            alert('load txt file format please')
+        }
+        file_name = str(file.name);
+        filename1 = file_name.split('.');
+    }
+
+    calculexy(){
+        xyzWavelength = [];
+        xValues = [];
+        yValues = [];
+        zValues = [];
+        // for calculating the x, y, and cct values
+        for(let m = 0; m <= wavelength.length; m++){
+            for(let n = 0; n <= wavelengthcol.length; n++){
+                let num = wavelength[m];
+                let roundedWavelength = round(float(wavelengthcol[n]));
+                if(num === roundedWavelength){
+                    xyzWavelength.push(roundedWavelength);
+                    xValues.push(float(intensitycol[n]) * xdata[m]);
+                    yValues.push(float(intensitycol[n]) * ydata[m]);
+                    zValues.push(float(intensitycol[n]) * zdata[m]);
+                }else{
+                    //pass;
+                }
+            }
+        }
+        let sumX = 0;
+        let sumY = 0;
+        let sumZ = 0;
+        for(let i = 0; i < xyzWavelength.length; i++){
+            sumX += xValues[i];
+            sumY += yValues[i];
+            sumZ += zValues[i];
+        }
+        x = (4*sumX)/(sumX + (15*sumY) + (3*sumZ));
+        y = (9*sumY)/(sumX + (15*sumY) + (3*sumZ));
+
+        print(x, y);
+        let n, cct;
+        n = (x-0.332)/(0.1858-y);
+        cct = (437*pow(n, 3)) + (3601*pow(n, 2)) + (6861*n) + (5517);
+        inputx.value(round(x, 3));
+        inputy.value(round(y, 3));
+        inputcct.value('Not applicable');  //round(cct, 2)
+        input_file_id.value(filename1[0]);
+    }
+
+    addCIEpoint(){
+        let x1 = inputx.value();
+        let y1 = inputy.value();
+        let file_id = input_file_id.value();
+            xcoordinate.push(round(x1, 3));
+            ycoordinate.push(round(y1, 3));
+            symbolpoint.push(symbol[z]);
+            namesArray.push(file_id);
+
+        z++;
+        print(x, y, xcoordinate);
+    }
+
+    CIEpoint(){
+        push();
+        fill(this.legendColor.value());
+        textFont(this.legendFont.value());
+        textSize(Number(this.legendFontSize.value()));
+        textAlign(LEFT);
+        textStyle(NORMAL);
+        for(let j = 0; j <= xcoordinate.length-1; j++){
+            push();
+            translate(100, 462);
+            text(`${symbolpoint[j]}`, (float(xcoordinate[j])*480)-(Number(this.legendFontSize.value()))/3, (float(ycoordinate[j]*-544)) + (Number(this.legendFontSize.value()))/2.5);
+            pop();
+            push();
+            translate(0, 100);
+            text(`${symbolpoint[j]} ` + namesArray[j], 300, j*20);
+            pop();
+        }
+        pop();
+    }
+    removeCIEpoint(){
+        xcoordinate.splice(-1, 1);
+        ycoordinate.splice(-1, 1);
+        symbolpoint.splice(-1, 1);
+        namesArray.splice(-1, 1);
+        
+    }
+    saveImage(){
+        var to_save = get( 20, 20, 450, 510 ); 
+        save(to_save, "CIE1976chromaticitydiagram.png");
+    }
+}
+
+
+
+
+
+
+
+

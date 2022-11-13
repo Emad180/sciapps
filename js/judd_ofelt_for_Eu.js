@@ -37,7 +37,7 @@ window.onload = function () {
 
                 var str = linesArray.join('\n');
 
-                document.getElementById('xcolumn').value = str; 
+                document.getElementById('textarea').value = str; 
                 let textArea = str.split('\n')
                 textArea.forEach(line => {
                     let value = line.split('    ');
@@ -66,7 +66,7 @@ window.onload = function () {
 
 function dataProcessing(Array1, Array2){
     document.getElementById('forcanvas').innerHTML = '';
-    document.getElementById('forcanvas').innerHTML = '<canvas id="myChart" width="100%" height="62vh"></canvas>';
+    document.getElementById('forcanvas').innerHTML = '<canvas id="myChart" width="" height="250vh"></canvas>';
     var ctx = document.getElementById('myChart').getContext('2d');
     var myChart = new Chart(ctx, {
         type: 'line',
@@ -80,10 +80,10 @@ function dataProcessing(Array1, Array2){
             }]
         },
         options: {
-            maintainAspectRatio: false,  
+          responsive: true,
+          maintainAspectRatio: false,
           scales: {
             x: {
-                type: 'linear',
                 ticks: {
                   callback: function(value, index, values) { 
                     return Math.floor(Array1[index]);
@@ -96,7 +96,7 @@ function dataProcessing(Array1, Array2){
                   text: 'Time'
                 },
                 grid:{
-                 display:true,
+                 display:false,
                  borderWidth: 2,
                  borderColor: 'black',
                  beginAtZero: true,
@@ -112,7 +112,7 @@ function dataProcessing(Array1, Array2){
                 text: 'Counts'
               },
               grid:{
-                display:true,
+                display:false,
                 borderWidth: 2,
                 borderColor: 'black',
               }

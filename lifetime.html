@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/lifetime.css">
     <script src='chartjs/dist/chart.js' type='text/javascript'></script>
     <script src='js/lifetime.js' type='text/javascript'></script>
+    <script type="text/javascript"  src="js/js_for_css.js"></script>
     <title>Quicly calculate the average lifetime of a photoluminescence decay curve without fitting</title>
 </head>
 <body>
@@ -21,58 +22,75 @@
                 <span class='bar'></span>
                 <span class='bar'></span>
             </label>
-  
-            <label class="brand-title">Sci-Sim</label>
-  
-            <img class='search' src="images/search-icon.png" alt="srearch icon"> 
-  
-            <ul class='menu'>
-                <li><a href="https://sci-sim.com">Home</a></li>
-                <li><a href="CIE1931.html">CIE 1931 app</a></li>
-                <li><a href="CIE1976.html">CIE 1976 app</a></li>
-                <li><a href="lifetime.html">Average lifetime calculator</a></li>
+
+            <p class="brand-title">Sci-Sim</p>
+            <img class='logo' src="images/logo.png" alt="srearch icon">
+
+            <ul id='menu'>
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search....">
+                <li><a href="https://sci-sim.com"> <b> Home </b> </a></li>
+                <li><a href="CIE1931.html"> <b> CIE 1931 app </b> </a></li>
+                <li><a href="CIE1976.html"> <b> CIELUV 1976 app </b> </a></li>
+                <li><a href="lifetime.html"> <b> Average lifetime </b> </a></li>
             </ul>
         </nav>
     </header>
 
-    <div class='main'>
-        <h1 id='main_title'>Quickly calculate the average lifetime of a photoluminescence decay curve without fitting.</h1>
-        <input type="file" id="choose_file">
-        <p id='lifetime'>Lifetime Result = </p>  <p id='lifetime_result'></p>
-        <div id='forcanvas'>
-            <!-- <canvas id="myChart" width="100%" height="100%"></canvas> -->
-        </div> 
-        <textarea name="" id="xcolumn"></textarea>
-        <h3 id='theUse'>How to use this tool?</h3>
-        <p id='useContent'> It is very simple, all you have to do is choose a photoluminescene 
-            decay curve (lifetime) file from your computer by clicking the top left button "Choose file", open the chosen file,
-            the average lifetime result will appear right in the top-right red box, the decay curve
-            will be displyed in the bottom-left box, and all the numerical values involved in the calculations
-            will appear in the bottom-right text area. The average lifetime unit (s, ms, us, ns) will always be 
-            the unit of your measurements.
-        </p>
-        <h3 id='work'>How it works?</h3>
-        <p id='workContent1'> The following equation is used in the program to take care of the calculations 
-        </p>
-        <img id='equation' src="images/lifetime_equation.png" alt="Girl in a jacket" width="500" height="100">
-        <p id='workContent2'> where &tau; represent the average lifetime, t is time and i is the intensity
-            counts. 
-        </p>
-        <h3 id='feedback'>Your feedback will give us the courage to improve our software tools:</h3>
-        <p id='feedbackContent'> If you have any recommendations, comments or noticed any malfunction, contact us at 
-            <a href = "mailto:contact@sci-sim.com" target='blank'> Click here</a>,
-            we are glad to hear that from you. 
-        </p>
-    </div>
+    <div class="body-content">
+        <div class='main'>
+            <h2 id='main_title'>Quickly calculate the average lifetime of a photoluminescence decay curve without fitting.</h2>
+            <div class="input_result">
+                <div>
+                    <input type="file" id="choose_file">
+                </div>
+                <div>
+                    <p id='lifetime'>Lifetime Result = </p>  
+                </div>
+                <div>
+                    <p id='lifetime_result'></p>
+                </div>
+            </div>
 
-    <div class='bottom-bar'>
-        
-        <div class='contact-us'>
-            Contact us</br>
-            <a href = "mailto:sales@sci-sim.com" target='blank'><img src="images/gmail-logo.png" alt="gmail"></a>
-            <a href = "" target='blank'><img src="images/facebook-logo.png" alt="facebook"></a>
-            <a href = "" target='blank'><img src="images/research-gate-logo.png" alt="researchgate"></a>
-            <a href = "" target='blank'><img src="images/linkedin-logo.png" alt="linkedin"></a>
+            <div class="canvas_textarea">
+                <div id='forcanvas'>
+                    <!-- <canvas id="myChart" width="" height=""></canvas> -->
+                </div>
+                <div id='fortextarea'>
+                    <textarea name="" id="xcolumn"></textarea>
+                </div>
+            </div> 
+            
+            <h3 id='theUse'>How to use this tool?</h3>
+            <p id='useContent'> It is very simple, all you have to do is choose a photoluminescene 
+                decay curve (lifetime) file from your computer by clicking the top left button "Choose file", open the chosen file,
+                the average lifetime result will appear right in the top-right red box, the decay curve
+                will be displyed in the bottom-left box, and all the numerical values involved in the calculations
+                will appear in the bottom-right text area. The average lifetime unit (s, ms, us, ns) will always be 
+                the unit of your measurements.
+            </p>
+            <h3 id='work'>How it works?</h3>
+            <p id='workContent1'> The following equation is used in the program to take care of the calculations 
+            </p>
+            <img id='equation' src="images/lifetime_equation.png" alt="Girl in a jacket" width="500" height="100">
+            <p id='workContent2'> where &tau; represent the average lifetime, t is time and i is the intensity
+                counts. 
+            </p>
+            <h3 id='feedback'>Your feedback will give us the courage to improve our software tools:</h3>
+            <p id='feedbackContent'> If you have any recommendations, comments or noticed any malfunction, contact us at 
+                <a href = "mailto:contact@sci-sim.com" target='blank'> Click here</a>,
+                we are glad to hear that from you. 
+            </p>
+        </div>
+
+        <div class='bottom-bar'>
+            <div class='section1'>
+                <p class="contact_us_text">Contact us<a href = "mailto: omda180@gmail.com"><img class="contact_us_icon" src="images/gmail-logo.png" alt="gmail"></a> </p>
+                <p class="copy_right"> All rights reserved &copy; Sci-Sim </p> 
+            </div>
+            <div class='section2'>
+                <p><a href="">About Sci-Sim</a> </p>
+                <p> <a href="">Scientific products</a></p>
+            </div>
         </div>
     </div>
 
