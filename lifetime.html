@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="canonical" href="https://sciapps.sci-sim.com/lifetime.html" />
     <meta name="description" content="Online web app to quickly calculate the average lifetime of a photo/cathodo-luminescence decay curve without fitting">
@@ -40,13 +41,13 @@
         <div class='main'>
             <h2 id='main_title'>Quickly calculate the average lifetime of a photoluminescence decay curve without fitting.</h2>
             <div class="input_result">
-                <div>
+                <div class="input_container">
                     <input type="file" id="choose_file">
                 </div>
-                <div>
+                <div class="input_container">
                     <p id='lifetime'>Lifetime Result = </p>  
                 </div>
-                <div>
+                <div class="input_container">
                     <p id='lifetime_result'></p>
                 </div>
             </div>
@@ -71,7 +72,7 @@
             <h3 id='work'>How it works?</h3>
             <p id='workContent1'> The following equation is used in the program to take care of the calculations 
             </p>
-            <img id='equation' src="images/lifetime_equation.png" alt="Girl in a jacket" width="500" height="100">
+            <img id='equation' src="images/lifetime_equation.png" alt="Girl in a jacket" width="50%" height="80vh">
             <p id='workContent2'> where &tau; represent the average lifetime, t is time and i is the intensity
                 counts. 
             </p>

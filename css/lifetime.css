@@ -84,7 +84,6 @@ ul input {
   top: 71px; margin-left: 26%; padding: 0; text-align: justify; position: relative;
    width: 73%; background-color: white; line-height: 2rem; 
 }
-
 .main{
     position: relative; padding: 1%; padding-top: 0; margin: 0px;
 }
@@ -94,15 +93,18 @@ ul input {
 .input_result{
   position: relative; display: flex; flex-direction: row; margin: 0; padding: 0;
 }
+.input_container{
+  width: 33%; margin: 0; padding: 0;
+}
 #choose_file{
     margin: 0px; padding: 0px;
 }
 #lifetime{
-    margin: 0px; padding: 0px; 
+    margin: 0px; padding: 0px; margin-left: 30%;
 }
 #lifetime_result{
-    border: solid 1px rgb(221, 88, 88); margin: 0px; margin-left: 5%;
-    height: 20px; width: 100px; border-radius: 5px; padding: 5px; 
+    border: solid 1px rgb(221, 88, 88); margin: 0px; margin-left: 0;
+    height: 20px; width: 100%; border-radius: 5px; padding: 2px; 
 }
 .canvas_textarea{
   display: flex; flex-direction: row; position: relative; width: 100%; padding: 1%; margin: 0;
@@ -140,15 +142,41 @@ ul input {
   position: absolute; height: 2rem; margin-left: 1%;
 }
 
-@media (max-width: 1200px){
+@media (max-width: 1024px){
   #menu{
-    display: none;
+      width: 30%; 
+  }
+  .body-content{
+      margin-left: 33%; width: 65%; 
+  }
+
+}
+
+@media (max-width: 768px){
+  #menu{
+      width: 50%; display: none;
   }
   #check:checked ~ #menu{
-    display: block;
+      display: block;
   }
-  .body-content {
-    width: 100%;
-    margin-left: 0%;
+  .body-content{
+      margin-left: 1%; width: 99%; 
+  } 
+  .bottom-bar{
+      flex-direction: column; height: max-content; align-items: center;
+  }
+}
+@media (max-width: 480px){
+  #menu{
+      width: 100%; display: none;
+  }
+  #check:checked ~ #menu{
+      display: block;
+  }
+  .body-content{
+      margin-left: 1%; width: 99%; 
+  } 
+  .bottom-bar{
+      flex-direction: column; height: max-content; align-items: center;
   }
 }
