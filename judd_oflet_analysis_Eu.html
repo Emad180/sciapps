@@ -7,13 +7,13 @@
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="canonical" href="https://sciapps.sci-sim.com/judd_ofelt_analysis_Eu.html" />
     <meta name="description" content=" ">
-    <meta name="keywords" content=" ">
+    <meta name="keywords" content="Judd-Ofelt parameters, Europium, luminescence, photoluminescence, rare earth">
     <meta name="author" content="Emad Hasabeldaim Hadi Hasabeldaim">
-    <script type="text/javascript"  src="jslib/decimaljs/decimal.js"></script>
+    <script type="text/javascript"  src="jslib/decimal/decimal.js"></script>
     <script src='chartjs/dist/chart.js' type='text/javascript'></script>
     <script type="text/javascript"  src="js/judd_ofelt_for_Eu.js"></script>
     <script type="text/javascript"  src="js/js_for_css.js"></script>
-    <title> judd-ofelt analysis of Eu from photoluminescence spectra </title>
+    <title> judd-ofelt parameters calculator of Europium from a luminescence spectrum </title>
 </head>
 
 <body>
@@ -26,38 +26,235 @@
                 <span class='bar'></span>
             </label>
 
-            <p class="brand-title">Sci-Sim</p>
+            <p class="brand-title">JOLS</p>
             <img class='logo' src="images/logo.png" alt="srearch icon">
 
             <ul id='menu'>
                 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search....">
-                <li><a href="index.html"><b>Home</b></a></li>
-                <li><a href="nanotechnologyconcept.html"><b> Nanotechnology in simple examples  </b></a></li>
+                <!-- <li><a href="index.html"><b>Home</b></a></li>
+                <li><a href="nanotechnologyconcept.html"><b> Nanotechnology in simple examples  </b></a></li> -->
             </ul>
         </nav>
 
     </header>
 
     <div class="body-content">
-        <h2>Judd-Ofelt analysis calculator of Europium from a photoluminescence spectrum</h2>
+        <h1> judd-ofelt parameters calculator of Europium from a luminescence spectrum </h1>
         <div class="chart_parent">
-            <p id='lifetime'>Lifetime Result = </p>  <p id='lifetime_result'></p>
             <div id='forcanvas'>
-                <input type="file" id="choose_file">
+                <input type="file" id="choose_file" >
+                <button type="button" id='removebackground'> Remove background </button>
+                <canvas id="myChart"></canvas>
             </div>
             <div class="data_output">
                 <textarea name="" id="textarea" cols="2" rows="" ></textarea>
             </div>
         </div>
-        <h1></h1><br><br><br>
+
+        <table>
+            <tr>
+                <th>Transition</th>
+                <th>min (nm)</th>
+                <th>max (nm)</th>
+                <th>n</th>
+                <th>Area</th>
+                <th>&#8486; (cm<sup>2</sup>) x 1E-20</th>
+                <th>Tr. Prob. (1/s)</th>
+                <th>&beta; (%)</th>
+                <th>V (1/cm)</th>
+                <th>&lambda; (nm)</th>
+            </tr>
+            <tr> 
+                <td><sup>5</sup>D<sub>0</sub>&#8594;<sup>7</sup>F<sub>1</sub></td>
+                <td><input type="number" onclick=funf1min(); name="hh" id="f1min" value=""> </td>
+                <td><input type="number" onclick=funf1max(); name="hh" id="f1max" value=""> </td>
+                <td><input type="number" id="refIndex1" value=""> </td>
+                <td id="f1area"> </td>
+                <td id="f1omega"> </td>
+                <td id="f1tranprob"> </td>
+                <td id="f1branch"> </td>
+                <td id="f1v"> </td>
+                <td id="f1wavelength"> </td>
+            </tr>
+            <tr>
+                <td><sup>5</sup>D<sub>0</sub>&#8594;<sup>7</sup>F<sub>2</sub></td>
+                <td><input type="number" onclick=funf2min(); name="hh" id="f2min" value=""> </td>
+                <td><input type="number" onclick=funf2max(); name="hh" id="f2max" value=""> </td>
+                <td><input type="number" id="refIndex2" value=""> </td>
+                <td id="f2area"> </td>
+                <td id="f2omega"> </td>
+                <td id="f2tranprob"> </td>
+                <td id="f2branch"> </td>
+                <td id="f2v"> </td>
+                <td id="f2wavelength"> </td>
+            </tr>
+            <tr>
+                <td><sup>5</sup>D<sub>0</sub>&#8594;<sup>7</sup>F<sub>4</sub></td>
+                <td><input type="number" onclick=funf4min(); name="hh" id="f4min" value=""> </td>
+                <td><input type="number" onclick=funf4max(); name="hh" id="f4max" value=""> </td>
+                <td><input type="number" id="refIndex4" value=""> </td>
+                <td id="f4area"> </td>
+                <td id="f4omega"> </td>
+                <td id="f4tranprob"> </td>
+                <td id="f4branch"> </td>
+                <td id="f4v"> </td>
+                <td id="f4wavelength"> </td>
+            </tr>
+            <tr>
+                <td><sup>5</sup>D<sub>0</sub>&#8594;<sup>7</sup>F<sub>6</sub></td>
+                <td><input type="number" onclick=funf6min(); name="hh" id="f6min" value=""> </td>
+                <td><input type="number" onclick=funf6max(); name="hh" id="f6max" value=""> </td>
+                <td><input type="number" id="refIndex6" value=""> </td>
+                <td id="f6area"> </td>
+                <td id="f6omega"> </td>
+                <td id="f6tranprob"> </td>
+                <td id="f6branch"> </td>
+                <td id="f6v"> </td>
+                <td id="f6wavelength"> </td>
+            </tr>
+        </table>
+
+        <p id="ObservedLifeTime"> Observed lifetime (&#181;s) <input id='lifetime' type="number">
+            <a href="files/ZnO_Eu.csv" download>Download test file</a>
+            <button type="button" id="calculate">Calculate</button>
+            <button type="button" id="reset">Reset</button>
+        </p>
+
+        <!-- Table for derived and other useful parameters -->
+        <table id="table2">
+            <tr>
+                <th colspan="5">Derived parameters</th>
+                <th colspan="2">Europium as spectroscopy probe</th>
+                <th colspan="2" rowspan="2">Asymmetric ratio (R), Quantum efficiency (&eta;), and calculated lifetime (&#964;)</th>
+            </tr>
+
+            <tr>
+                <th>Transition</th>
+                <th>&#916; &#955; <sub>eff</sub> (nm) </th>
+                <th>&#963;<sub>e</sub> (cm<sup>2</sup>) x 1E-22 </th>
+                <th>&#963;<sub>e</sub> x &#955; <sub>eff</sub> (cm<sup>3</sup>) x 1E-28</th>
+                <th>&#963;<sub>e</sub> x &#964; (</sup>cm<sup>2</sup>s) x 1E-25</th>
+                <th>No. of peaks</th>
+                <th>Point group symmetry</th>
+            </tr>
+
+            <tr>
+                <td><sup>5</sup>D<sub>0</sub>&#8594;<sup>7</sup>F<sub>1</sub></td>
+                <td id="delta_lamda_f1"></td>
+                <td id="stimEmission1"></td>
+                <td id="gainBand1"></td>
+                <td></td>
+
+                <td>
+                    <sup>5</sup>D<sub>0</sub>&#8594;<sup>7</sup>F<sub>0</sub> &nbsp;
+                    <select id="pointSymmetery0" onchange="pointGroupSymmetery()">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                    </select>
+                </td>
+
+                <td id="AsymmetryPointGroupResult" rowspan="5"></td>
+                <td>R = </td>
+                <td id="AsymmetricRatioValue"></td>
+            </tr>
+
+            <tr>
+                <td><sup>5</sup>D<sub>0</sub>&#8594;<sup>7</sup>F<sub>2</sub></td>
+                <td id="delta_lamda_f2"></td>
+                <td id="stimEmission2"></td>
+                <td id="gainBand2"></td>
+                <td id="opticalgain2"></td>
+
+                <td>
+                    <sup>5</sup>D<sub>0</sub>&#8594;<sup>7</sup>F<sub>1</sub> &nbsp;
+                    <select id="pointSymmetery1" onchange="pointGroupSymmetery()">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </td>
+
+                <td>&eta; (%) = </td>
+                <td id="quantumEffeciency"></td>
+            </tr>
+
+            <tr>
+                <td><sup>5</sup>D<sub>0</sub>&#8594;<sup>7</sup>F<sub>4</sub></td>
+                <td id="delta_lamda_f4"></td>
+                <td id="stimEmission4"></td>
+                <td id="gainBand4"></td>
+                <td></td>
+
+                <td>
+                    <sup>5</sup>D<sub>0</sub>&#8594;<sup>7</sup>F<sub>2</sub> &nbsp;
+                    <select id="pointSymmetery2" onchange="pointGroupSymmetery()">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </td>
+
+                <th>&#964;<sub>rad</sub> (&#181;s) = </th>
+                <td id="radLifetime"></td>
+            </tr>
+
+            <tr>
+                <td><sup>5</sup>D<sub>0</sub>&#8594;<sup>7</sup>F<sub>6</sub></td>
+                <td id="delta_lamda_f6"></td>
+                <td id="stimEmission6"></td>
+                <td id="gainBand6"></td>
+                <td></td>
+
+                <td>
+                    <sup>5</sup>D<sub>0</sub>&#8594;<sup>7</sup>F<sub>3</sub> &nbsp;
+                    <select id="pointSymmetery3" onchange="pointGroupSymmetery()">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td  style="border:0"></td>
+                <td  style="border:0"></td>
+                <td  style="border:0"></td>
+                <td  style="border:0"></td>
+                <td  style="border:0"></td>
+                <td>
+                    <sup>5</sup>D<sub>0</sub>&#8594;<sup>7</sup>F<sub>4</sub> &nbsp;
+                    <select id="pointSymmetery4" onchange="pointGroupSymmetery()">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="9">9</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+
+        <br>
         <div class='bottom-bar'>
             <div class='section1'>
-                <p class="contact_us_text">Contact us<a href = "mailto: omda180@gmail.com"><img class="contact_us_icon" src="images/gmail-logo.png" alt="gmail"></a> </p>
-                <p class="copy_right"> All rights reserved &copy; Sci-Sim </p> 
+                <p class="contact_us_text">Contact the author<a href = "mailto: omda180@gmail.com"><img class="contact_us_icon" src="images/gmail-logo.png" alt="gmail"></a> </p>
+                <!-- <p class="copy_right"> ******************** </p>  -->
             </div>
             <div class='section2'>
-                <p><a href="">About Sci-Sim</a> </p>
-                <p> <a href="">Scientific products</a></p>
+                <!-- <p><a href="">*****************</a> </p> -->
+                <!-- <p> <a href="">******************</a></p> -->
             </div>
         </div>
     </div>
