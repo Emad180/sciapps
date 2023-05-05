@@ -33,7 +33,7 @@ window.onload = function () {
                 lines.forEach(element => {
                     if(/[^0-9,.\s\tEe+-]/g.test(element)){
                         //pass
-                    }else if(element == ''){
+                    }else if(element == '' || isNaN(element[0]) || isNaN(element[1])){
                         //pass;
                     }else{
                         let rowTrimed = element.replace(/^\s+|\s+$/gm,'');
@@ -158,26 +158,28 @@ window.onload = function () {
         
         function crosshair(chart, mousemove){
             chart.update('none');
-            const x = mousemove.offsetX;
-            const y = mousemove.offsetY;
-            const {ctx, chartArea: {top, bottom, right, left, width, height} } = chart;
-            if(x >= left && x <= right){
+            const xm = mousemove.offsetX;
+            const ym = mousemove.offsetY;
+            const {ctx, scales: {x, y}, chartArea: {top, bottom, right, left, width, height} } = chart;
+            const xIndex = x.getValueForPixel(xm);
+            const dataLabel = data.labels[xIndex];
+            if(xm >= left && xm <= right){
                 ctx.save();
                 ctx.strokeStyle = '#ff0000';
                 ctx.lineWidth = 2;
                 ctx.beginPath();
                 ctx.fillStyle = "#ff0000";
                 if(Array1.length == 0){
-                    ctx.fillText('upload data', x+2, y-5);
+                    ctx.fillText('upload data', xm+2, ym-5);
                 }else{
-                    if(x < right/1.2){
-                        ctx.fillText(`${((((Array1[Array1.length-1]-Array1[0])/width)*(x-left)) + Array1[0]).toFixed(2)}`, x+2, y-5);
+                    if(xm < right/1.2){
+                        ctx.fillText(dataLabel.toFixed(2), xm+2, ym-5);
                     }else{
-                        ctx.fillText(`${((((Array1[Array1.length-1]-Array1[0])/width)*(x-left)) + Array1[0]).toFixed(2)}`, x-40, y-5);
+                        ctx.fillText(dataLabel.toFixed(2), xm-40, ym-5);
                     }
                 }
-                ctx.moveTo(x, bottom);
-                ctx.lineTo(x, top);
+                ctx.moveTo(xm, bottom);
+                ctx.lineTo(xm, top);
                 ctx.stroke();
                 ctx.closePath();
             }
@@ -187,8 +189,11 @@ window.onload = function () {
             if(Array1.length == 0){
                 alert('upload data please');
             }else{
-                const canvasPosition = Chart.helpers.getRelativePosition(click2, myChart);
-                let wlvalue = ((((Array1[Array1.length-1]-Array1[0])/myChart.chartArea.width)*(canvasPosition.x-myChart.chartArea.left)) + Array1[0]).toFixed(2);
+                const {scales: {x, y} } = myChart;
+                const xPos = click2.offsetX;
+                const xIndex = x.getValueForPixel(xPos);
+                const dataLabel = data.labels[xIndex];
+                
                 let f1min = document.getElementById('f1min');
                 let f1max = document.getElementById('f1max');
                 let f2min = document.getElementById('f2min');
@@ -198,21 +203,21 @@ window.onload = function () {
                 let f6min = document.getElementById('f6min');
                 let f6max = document.getElementById('f6max');
                 if (f1min.style.borderWidth == '3px'){
-                    f1min.value = wlvalue;
+                    f1min.value = dataLabel.toFixed(2);
                 }else if(f1max.style.borderWidth == '3px'){
-                    f1max.value = wlvalue;
+                    f1max.value = dataLabel.toFixed(2);
                 }else if(f2min.style.borderWidth == '3px'){
-                    f2min.value = wlvalue;
+                    f2min.value = dataLabel.toFixed(2);
                 }else if(f2max.style.borderWidth == '3px'){
-                    f2max.value = wlvalue;
+                    f2max.value = dataLabel.toFixed(2);
                 }else if(f4min.style.borderWidth == '3px'){
-                    f4min.value = wlvalue;
+                    f4min.value = dataLabel.toFixed(2);
                 }else if(f4max.style.borderWidth == '3px'){
-                    f4max.value = wlvalue;
+                    f4max.value = dataLabel.toFixed(2);
                 }else if(f6min.style.borderWidth == '3px'){
-                    f6min.value = wlvalue;
+                    f6min.value = dataLabel.toFixed(2);
                 }else if(f6max.style.borderWidth == '3px'){
-                    f6max.value = wlvalue;
+                    f6max.value = dataLabel.toFixed(2);
                 }else{
                     alert('click to activate input fields');
                 }
@@ -331,13 +336,7 @@ window.onload = function () {
 
             let f6xarray = [];
             let f6yarray = [];
-            if(f1min < xArray[0] || f1min > xArray[xArray.length-1] || f1max < xArray[0] || f1max > xArray[xArray.length-1]){
-                alert('The input values of the 5D0-7F1 transition are out of range');
-            }else if(f2min < xArray[0] || f2min > xArray[xArray.length-1] || f2max < xArray[0] || f2max > xArray[xArray.length-1]){
-                alert('The input values of the 5D0-7F2 transition are out of range');
-            }else if(f4min < xArray[0] || f4min > xArray[xArray.length-1] || f4max < xArray[0] || f4max > xArray[xArray.length-1]){
-                alert('The input values of the 5D0-7F4 transition are out of range');
-            }else if(f1min > f1max || f2min > f2max || f4min > f4max || f6min > f6max){
+            if(f1min > f1max || f2min > f2max || f4min > f4max || f6min > f6max){
                 alert('The min value of any transition can not be greator than its max value');
             }else{
                 // 5D0 - 7F1 transition calculations
