@@ -388,7 +388,7 @@ window.onload = function () {
                 gainBand4.innerText = d(gainBandWidth(stimEmission4.innerText, delta_lamda_f4.innerText)).toFixed(3);
 
                 //radiative lifetime in case of only f4
-                radLifetime.innerText = d(1).dividedBy(d(f2tranprob.innerText).plus(f4tranprob.innerText)).mul('1E+6').toFixed(3);
+                radLifetime.innerText = d(1).dividedBy(d(f1tranprob.innerText).plus(f2tranprob.innerText).plus(f4tranprob.innerText)).mul('1E+6').toFixed(3);
 
                 //Calculated branching ratios for f1, f2, and f4
                 f1branch.innerText = d(d(f1tranprob.innerText).mul(100)).div(d(f1tranprob.innerText)
@@ -434,8 +434,8 @@ window.onload = function () {
                     f6branch.innerText = d(d(f6tranprob.innerText).mul(100)).div(d(f1tranprob.innerText)
                     .plus(f2tranprob.innerText).plus(f4tranprob.innerText).plus(f6tranprob.innerText)).toFixed(3);
                     //radiative lifetime
-                    radLifetime.innerText = d(1).dividedBy(d(f2tranprob.innerText).plus(f4tranprob.innerText)
-                    .plus(f6tranprob.innerText)).mul('1E+6').toFixed(3);
+                    radLifetime.innerText = d(1).dividedBy(d(f1tranprob.innerText).plus(f2tranprob.innerText)
+                    .plus(f4tranprob.innerText).plus(f6tranprob.innerText)).mul('1E+6').toFixed(3);
                 }
                 
                 //For calculating the asymmertry ratio, radiative lifetime and the quantum efficiency
