@@ -1,0 +1,225 @@
+html, body {
+    width: 100%; font-family: sans-serif; position: relative;
+    margin: 0; padding: 0; height: 100%;
+}
+
+.navbar{
+    width: 100%; height: 70px; background-color: black; margin: 0;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1; display: flex; flex-direction: row;
+}
+#check{
+    display: none; position: absolute;
+}
+.logo{
+    position: absolute; width: 100px; height: 70px; right: 5px;
+}
+.brand-title{
+    position: absolute; color: white; left: 80px; top: -15px; font-size: xx-large;
+    font-family:'Courier New', Courier, monospace;
+}
+.toggle-button .bar {
+    height: 4px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+.toggle-button {
+    position: absolute; 
+    margin-top: 20px;
+    margin-left: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35px;
+    height: 25px;
+    cursor: pointer;
+}
+
+#menu{
+    width: 25%; height: 100vh; border: solid 1px; 
+    top: 71px; background-color: rgb(57, 62, 63);
+    margin: 0; overflow-y: scroll; padding: 5px;  position: fixed; border: none;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+
+
+ul li {
+    list-style: none; height: max-content; background-color: rgb(242, 247, 248); border-radius: 10px; margin-top: 3px;
+    margin-left: 0; padding-left: 10px;
+}
+ul li:hover{
+    background-color: rgb(176, 179, 179); 
+}
+ul li a {
+    text-decoration: none; line-height: 25px; color: black; 
+    padding: 3px; 
+}
+ul input {
+    width: 96%; height: max-content; background-color: white; border-radius: 10px; margin: 0;
+    padding-left: 10px; padding-top: 4px; font-size: large; border: none;
+}
+#check:checked ~ #menu{
+    display: none;
+}
+.body-content{
+   top: 71px; margin-left: 26%; padding: 0; text-align: justify; position: relative;
+    width: 73%; background-color: white; line-height: 2rem; 
+}
+h1{
+    margin: 0.5%; margin-left: 0; padding-right: 0.8%; width: 99%; border-radius: 5px;
+    font-size: large; text-align: center;
+    box-shadow: 0px 0px 2px 0px black;
+    -webkit-box-shadow: 0px 0px 2px 0px black;
+    -moz-box-shadow: 0px 0px 2px 0px black;
+}
+.chart_parent{
+    display: flex; flex-direction: row; margin-bottom: 0.5vh;
+}
+#forcanvas{
+    width: 65%; height: 47vh; background-color: white; padding-right: 5px; 
+    box-shadow: 0px 0px 2px 0px black;
+    -webkit-box-shadow: 0px 0px 2px 0px black;
+    -moz-box-shadow: 0px 0px 2px 0px black;
+}
+#choose_file{
+    position: absolute;
+}
+#removebackground{
+    position: absolute; right: 35%;
+}
+.data_output{
+    width: 35%; height: 47vh; 
+}
+#textarea{
+    margin-left: 2%; width: 96%; height: 98%; 
+    box-shadow: 0px 0px 2px 0px black;
+    -webkit-box-shadow: 0px 0px 2px 0px black;
+    -moz-box-shadow: 0px 0px 2px 0px black;
+}
+#buttons{
+    line-height: 0; margin: 0; padding: 0; font-size: smaller; margin-top: 0.5vh;
+    margin-bottom: 0.5vh; 
+}
+#buttons a{
+    border: solid 1px rgb(112, 112, 238); padding: 0.1%; color: black; margin-left: 1%;
+    background-color: rgb(112, 112, 238); border-radius: 5px; text-decoration: none;
+    padding-left: 3%; padding-right: 3%;
+}
+#calculate{
+    width: 15%; background-color: #4CAF50; border-color: #4CAF50; border-radius: 5px;
+    margin-left: 1%;
+}
+#reset{
+    width: 15%; background-color: #f44336; border-color: #f44336; border-radius: 5px;
+    margin-left: 1%;
+}
+table{
+    width: 100%; padding: 0; margin: 0; margin-top: 1vh; text-align: center; font-size: x-small; 
+    border-collapse: collapse; line-height: 15px;
+    box-shadow: 0px 0px 2px 0px black; 
+    -webkit-box-shadow: 0px 0px 2px 0px black;
+    -moz-box-shadow: 0px 0px 2px 0px black;
+}
+table tr th{
+    width: 20%; margin: 0; padding: 0; border: 1px solid; 
+}
+table tr td{
+    margin: 0; padding: 0; border: 1px solid; 
+}
+table tr td input{
+    margin: 0; padding: 0; width: 90%; 
+}
+/* for hiding the small little arrows in the input fields */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+/* /////////////////////////////////////////// */
+#explanations{
+    font-size: small; font-family:'Gill Sans', 'Gill Sans MT', 'Calibri,' 'Trebuchet MS', sans-serif;
+    margin-left: 1%;
+}
+
+.bottom-bar{
+    width:100%; height: 10rem; background-color: black; display: flex; flex-direction: row;
+    color: white; font-family: 'Arial Narrow', Arial, sans-serif;
+}
+.section1{
+    width: 50%; padding: 2%; text-align: center; 
+}
+.section2{
+    width: 50%; padding: 2%; text-align: center; 
+}
+.section2 a{
+    text-decoration: none; color: white; border: 1px solid rgb(27, 27, 27); background-color: rgb(27, 27, 27);
+    padding: 1%; border-radius: 5px;
+}
+.section2 a:hover{
+    background-color: rgb(53, 52, 52);
+}
+.contact_us_icon{
+    position: absolute; height: 2rem; margin-left: 1%;
+}
+
+@media (max-width: 1024px){
+    #menu{
+        width: 30%; 
+    }
+    .body-content{
+        margin-left: 33%; width: 65%; 
+    }
+
+}
+
+@media (max-width: 768px){
+    #menu{
+        width: 50%; display: none;
+    }
+    #check:checked ~ #menu{
+        display: block;
+    }
+    .body-content{
+        margin-left: 3%; width: 95%; 
+    } 
+    .bottom-bar{
+        flex-direction: column; height: max-content; align-items: center;
+    }
+}
+@media (max-width: 480px){
+    #menu{
+        width: 100%; display: none;
+    }
+    #check:checked ~ #menu{
+        display: block;
+    }
+    .body-content{
+        margin-left: 3%; width: 95%; 
+    } 
+    .bottom-bar{
+        flex-direction: column; height: max-content; align-items: center;
+    }
+}
