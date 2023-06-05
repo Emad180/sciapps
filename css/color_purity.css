@@ -161,10 +161,13 @@ input[type=number] {
 /* /////////////////////////////////////////// */
 #explanations{
     font-size: small; font-family:'Gill Sans', 'Gill Sans MT', 'Calibri,' 'Trebuchet MS', sans-serif;
-    margin-left: 1%;
+    margin-left: 1%; 
 }
 h2 {
     text-align: center;
+}
+iframe{
+    width: 70%; height: 60vh;
 }
 
 .bottom-bar{
@@ -215,6 +218,9 @@ h2 {
 @media (max-width: 480px){
     #menu{
         width: 100%; display: none;
+    }
+    #explanations{
+        font-size:xx-small;
     }
     #check:checked ~ #menu{
         display: block;
