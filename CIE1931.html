@@ -1,31 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="canonical" href="https://sciapps.sci-sim.com/CIE1931.html" />
-    <meta name="description" content="Online web app to calculate and plot the CIE chromaticity diagram based on 1931 standard observer data">
-    <meta name="keywords" content="cie 1931 chromaticity diagram, chromaticity coordinates, commission internationale de l'eclairage, 1931">
+    <meta name="description"
+        content="Online web app to calculate and plot the CIE chromaticity diagram based on 1931 standard observer data">
+    <meta name="keywords"
+        content="cie 1931 chromaticity diagram, chromaticity coordinates, commission internationale de l'eclairage, 1931">
     <meta name="author" content="Emad Hasabeldaim Hadi Hasabeldaim">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+        integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" href='css/CIE1931.css'>
     <script src='jslib/p5.js' type='text/javascript'></script>
-    <script type="text/javascript"  src="js/js_for_css.js"></script>
+    <script type="text/javascript" src="js/js_for_css.js"></script>
     <title>CIE-1931 chromaticity diagram | an online tools</title>
 </head>
+
 <body>
-    <header> 
+    <header>
         <nav class='navbar'>
             <input type='checkbox' id='check'>
-            <label for='check' class='toggle-button'>   
+            <label for='check' class='toggle-button'>
                 <span class='bar'></span>
                 <span class='bar'></span>
                 <span class='bar'></span>
             </label>
 
             <p class="brand-title">Sci-Sim</p>
-            <img class='logo' src="images/logo.png" alt="srearch icon">
 
             <ul id='menu'>
                 <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search....">
@@ -34,16 +38,17 @@
                 <li><a href="CIE1976.html"> <b> CIELUV 1976 app </b> </a></li>
                 <li><a href="lifetime.html"> <b> Average lifetime </b> </a></li>
                 <li><a href="color_purity.html"> <b> Color purity calculator </b> </a></li>
-                <li><a href="judd_ofelt_analysis_Eu.html"> <b> Judd-Ofelt parameters calculator Eu<sup>3+</sup> </b> </a></li>
+                <li><a href="judd_ofelt_analysis_Eu.html"> <b> Judd-Ofelt parameters calculator Eu<sup>3+</sup> </b>
+                    </a></li>
             </ul>
         </nav>
     </header>
 
     <div class="body-content">
-        <div id = 'forCanvas'>
+        <div id='forCanvas'>
             <script src='js/CIE1931.js' type='text/javascript'></script>
         </div>
-        
+
         <div class='abstract'>
             <h1> CIE 1931 web-based app </h1>
 
@@ -51,17 +56,20 @@
             <p>Department of Physics, University of the Free State, Bloemfontein, 9300, South Africa</p>
             <p><i>Published </i> 2021</p>
             <p><i>Abstract </i></p>
-            <p>An online and interactive CIE 1931 chromaticity diagram app was successfully 
-                developed. This app can be used by scientist and professionals in different 
+            <p>An online and interactive CIE 1931 chromaticity diagram app was successfully
+                developed. This app can be used by scientist and professionals in different
                 fields including luminescent materials, color science and technology, color
                 related product design or anyone interested in color space. The color gamut
                 was constructed based on the data obtained by commission internationale
                 de l'eclairage 1931. The color matching functions were used to calculate
-                    the CIE coordinates X, Y, and Z.  
+                the CIE coordinates X, Y, and Z.
             </p>
-        <h2>User guidance video</h2>
+            <h2>User guidance video</h2>
             <center>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/EXW579eSVBs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/EXW579eSVBs"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </center>
 
             <p><i>Features </i></p>
@@ -71,37 +79,39 @@
                 <li>Calculate the X Y coordinates and the color corelated temperature (CCT).</li>
                 <li>Add multiple CIE points on the CIE diagram.</li>
                 <li>Configure the diagram layout including the axis width, color, font, font size.</li>
-                <li>Save the final diagram as png file format.  </li>
+                <li>Save the final diagram as png file format. </li>
             </ol>
-            
+
             <p><i>Necessary information for accurate calculations:</i></p>
             <ol>
                 <li>The color matching function (data) used is 1931 2 deg.</li>
                 <li>Data wavelength range from 360 to 830 nm. </li>
-                <li>User data wavelength interval can be 1 nm, 2 nm, or 5 nm for the best estimate. However, any wavelenth interval will give reasonable estimate</li>
+                <li>User data wavelength interval can be 1 nm, 2 nm, or 5 nm for the best estimate. However, any
+                    wavelenth interval will give reasonable estimate</li>
                 <li>You may use text/csv file depending on you browser.</li>
-                <li>Download test file from <a href="files/Sample.txt" download>Here.txt</a> or <a href="files/Sample1.csv" download>Here.csv</a> </li>
+                <li>Download test file from <a href="files/Sample.txt" download>Here.txt</a> or <a
+                        href="files/Sample1.csv" download>Here.csv</a> </li>
             </ol>
-            
-            <p><i>ACKNOWLEDGMENTS </i> </br> This work is based on the research supported by the South Africa research 
-            chair initiative of the Department of Science and Technology and the National Research Foundation</p>
-            
-            <p><i> By using the software you are obliged to cite the Article: </i> </br> E. H. H. Hasabeldaim,  H. C. Swart, and  R. E. Kroon “Luminescence and stability of Tb doped CaF2 nanoparticles” RSC Adv. 13 (2023) 5353-5366. 
-                <a href="https://pubs.rsc.org/en/content/articlelanding/2023/ra/d2ra07897j#:~:text=Luminescence%20and%20stability%20of%20Tb%20doped%20CaF2%20nanoparticles%E2%80%A0&text=Incorporation%20of%20Tb%20ions%20into,upon%20excitation%20at%20257%20nm." 
-                target="_blank">https://doi.org/10.1039/D2RA07897J</a></p>
+
+            <p><i>ACKNOWLEDGMENTS </i> </br> This work is based on the research supported by the South Africa research
+                chair initiative of the Department of Science and Technology and the National Research Foundation</p>
+
+            <p><i> By using the software you are obliged to cite the Article: </i> </br> E. H. H. Hasabeldaim, H. C.
+                Swart, and R. E. Kroon “Luminescence and stability of Tb doped CaF2 nanoparticles” RSC Adv. 13 (2023)
+                5353-5366.
+                <a href="https://pubs.rsc.org/en/content/articlelanding/2023/ra/d2ra07897j#:~:text=Luminescence%20and%20stability%20of%20Tb%20doped%20CaF2%20nanoparticles%E2%80%A0&text=Incorporation%20of%20Tb%20ions%20into,upon%20excitation%20at%20257%20nm."
+                    target="_blank">https://doi.org/10.1039/D2RA07897J</a>
+            </p>
         </div>
 
-        <div class='bottom-bar'>
-            <div class='section1'>
-                <p class="contact_us_text">Contact us<a href = "mailto: omda180@gmail.com"><img class="contact_us_icon" src="images/gmail-logo.png" alt="gmail"></a> </p>
-                <p class="copy_right"> All rights reserved &copy; Sci-Sim </p> 
-            </div>
-            <div class='section2'>
-                <p><a href="">About Sci-Sim</a> </p>
-                <p> <a href="">Scientific products</a></p>
-            </div>
-        </div>
+        <footer class="bottom-bar">
+            <p>© 2020 Sci-Sim | For Scientists and Engineers</p>
+            <a href="mailto:contact@sci-sim.com">contact@sci-sim.com</a> &middot;
+            <a href="">About Us</a>
+        </footer>
+
     </div>
 
 </body>
+
 </html>
