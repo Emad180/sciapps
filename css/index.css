@@ -128,7 +128,7 @@ ul li a {
 
 /* Precise styling for the cancel/close icon button */
 .promo-banner-close {
-  position: absolute;
+  position: fixed;
   right: 16px;
   top: 50%;
   transform: translateY(-50%);
